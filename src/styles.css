@@ -63,7 +63,7 @@ body {
 ul.nav.navbar-nav {
   float: right;
 }
-.nav-my-account {
+.top-nav ul li a.nav-my-account {
   color: #ffd700 !important;
 }
 .flags a {
@@ -83,7 +83,7 @@ ul.nav.navbar-nav {
   text-align: center;
 }
 .top-nav ul li a {
-  color: #fff;
+  color: #fff !important;
   font-size: 1em;
   margin: 0;
   text-decoration: none;
@@ -199,10 +199,10 @@ div#bs-example-navbar-collapse-1 {
   margin: 3em 0 0 0;
 }
 .w3l-special-grid {
-  padding: 0;
+  padding: 0 !important;
 }
 .w3ls-special-img {
-  padding: 0;
+  padding: 0 !important;
   height: 171px;
   background-size: cover;
   text-align: center;
@@ -211,8 +211,10 @@ div#bs-example-navbar-collapse-1 {
 }
 .w3ls-special-img img {
   width: 100%;
+  padding: 0 !important;
 }
 .agileits-special-info {
+  height: 171px;
   text-align: center;
   padding: 1.3em;
   background: #f5f5f5;
