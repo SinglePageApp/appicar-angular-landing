@@ -22,9 +22,7 @@ export class NavComponent implements OnInit {
   onNavLinkClick(event: Event) {
     event.preventDefault();
     try {
-      setTimeout(() => {
-        document.querySelector('#' + this.fragment).scrollIntoView();
-      }, 5000);
+      document.querySelector('#' + this.fragment).scrollIntoView();
     } catch (e) {
       console.log('Error scrolling to #' + this.fragment);
     }
