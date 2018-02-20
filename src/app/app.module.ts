@@ -48,7 +48,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true })
+    RouterModule.forRoot(appRoutes, { enableTracing: false })
   ],
   providers: [],
   bootstrap: [AppComponent]
