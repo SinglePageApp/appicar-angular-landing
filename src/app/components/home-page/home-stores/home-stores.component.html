@@ -3,6 +3,15 @@
     <div class="special-heading">
       <h3>Our Stores</h3>
     </div>
+
+    <gears-loading-spinner *ngIf="isLoading">
+      Loading...
+    </gears-loading-spinner>
+
+    <div class="gql" *ngIf="!isLoading">
+      Score: {{stores.Country.name}}
+    </div>
+
     <div class="special-grids">
       <div class="col-md-4 w3l-special-grid">
         <div class="col-md-6 w3ls-special-img">

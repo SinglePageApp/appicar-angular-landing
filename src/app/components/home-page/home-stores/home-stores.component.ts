@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Store } from '../../../classes/Store';
+import { StoreService } from '../../../services/store.service';
+import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'app-home-stores',
   templateUrl: './home-stores.component.html',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeStoresComponent implements OnInit {
 
-  constructor() { }
+  isLoading: boolean;
+  stores: any;
 
-  ngOnInit() {
+  constructor(
+    private storeService: StoreService
+  ) {
+    this.isLoading = true;
   }
 
+  ngOnInit() {
+    this.storeService.getStores().subscribe(({ data, loading }) => {
+      this.isLoading = false;
+      this.stores = data.data;
+    });
+  }
 }
