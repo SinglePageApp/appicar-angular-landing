@@ -4,7 +4,6 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { ApolloModule, Apollo } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { setContext } from 'apollo-link-context';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
@@ -27,6 +26,7 @@ import { AboutTeamComponent } from './components/about-page/about-team/about-tea
 import { Error404Component } from './components/error-404/error-404.component';
 import { SearchboxComponent } from './components/searchbox/searchbox.component';
 import { GearsLoadingSpinnerComponent } from './components/loading-spinner';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -66,29 +66,9 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(
-    apollo: Apollo,
-    httpLink: HttpLink
-  ) {
-    const http = httpLink.create({uri: 'http://api.appicar.com/graphql'});
-
-    const auth = setContext((_, { headers }) => {
-      // get the authentication token from local storage if it exists
-      const token = localStorage.getItem('token');
-      // return the headers to the context so httpLink can read them
-      // in this example we assume headers property exists
-      // and it is an instance of HttpHeaders
-      if (!token) {
-        return {};
-      } else {
-        return {
-          headers: headers.append('Authorization', `Bearer ${token}`)
-        };
-      }
-    });
-
+  constructor(apollo: Apollo, httpLink: HttpLink) {
     apollo.create({
-      link: auth.concat(http),
+      link: httpLink.create({ uri: environment.API_URL }),
       cache: new InMemoryCache()
     });
   }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StoreService } from '../../../services/store.service';
+
 @Component({
   selector: 'app-home-header',
   templateUrl: './home-header.component.html',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeHeaderComponent implements OnInit {
 
-  constructor() { }
+  isLoading: boolean;
+  featuredStores: any;
+
+  constructor(private storeService: StoreService) {
+    this.isLoading = true;
+  }
 
   ngOnInit() {
+    this.storeService.getFeaturedStores().subscribe(({ data, loading }) => {
+      this.isLoading = false;
+      this.featuredStores = data.featuredStores;
+    });
   }
 
 }

@@ -130,7 +130,6 @@ body {
 }
 .w3ls-special-img {
   padding: 0 !important;
-  height: 171px;
   background-size: cover;
   text-align: center;
   position: relative;
@@ -138,6 +137,7 @@ body {
 }
 .w3ls-special-img img {
   width: 100%;
+  height: 171px;
   padding: 0 !important;
 }
 .agileits-special-info {
