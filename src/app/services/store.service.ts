@@ -13,6 +13,26 @@ export class StoreService {
       {
         stores {
           name
+          description
+          address
+          city
+          image
+        }
+      }
+    `;
+
+    return this.apollo.watchQuery<any>({query: query}).valueChanges;
+  }
+
+  getFeaturedStores(): any {
+    const query = gql`
+      {
+        featuredStores {
+          name
+          description
+          address
+          city
+          image
         }
       }
     `;
