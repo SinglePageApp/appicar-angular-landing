@@ -1,7 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { ApolloModule, Apollo } from 'apollo-angular';
+import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
+import { StoreService } from './services/store.service';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -19,6 +25,8 @@ import { AboutOffersComponent } from './components/about-page/about-offers/about
 import { AboutTeamComponent } from './components/about-page/about-team/about-team.component';
 import { Error404Component } from './components/error-404/error-404.component';
 import { SearchboxComponent } from './components/searchbox/searchbox.component';
+import { GearsLoadingSpinnerComponent } from './components/loading-spinner';
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -43,15 +51,25 @@ const appRoutes: Routes = [
     HomeContactComponent,
     HomeReviewsComponent,
     HomeHeaderComponent,
-    SearchboxComponent
+    SearchboxComponent,
+    GearsLoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
     AngularFontAwesomeModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: false })
+    RouterModule.forRoot(appRoutes, { enableTracing: false }),
+    HttpClientModule,
+    ApolloModule,
+    HttpLinkModule
   ],
-  providers: [],
+  providers: [StoreService],
   bootstrap: [AppComponent]
 })
-
-export class AppModule { }
+export class AppModule {
+  constructor(apollo: Apollo, httpLink: HttpLink) {
+    apollo.create({
+      link: httpLink.create({ uri: environment.API_URL }),
+      cache: new InMemoryCache()
+    });
+  }
+}
