@@ -20,7 +20,6 @@ export class NavComponent implements OnInit {
   }
 
   onNavLinkClick(event: Event) {
-    event.preventDefault();
     try {
       document.querySelector('#' + this.fragment).scrollIntoView();
     } catch (e) {
