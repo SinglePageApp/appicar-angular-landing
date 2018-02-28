@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApolloModule, Apollo } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { StoreService } from './services/store.service';
 
@@ -27,12 +29,18 @@ import { Error404Component } from './components/error-404/error-404.component';
 import { SearchboxComponent } from './components/searchbox/searchbox.component';
 import { GearsLoadingSpinnerComponent } from './components/loading-spinner';
 import { environment } from '../environments/environment';
+import { FlagsComponent } from './components/nav/flags/flags.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'about', component: AboutPageComponent },
   { path: '**', component: Error404Component }
 ];
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -52,7 +60,8 @@ const appRoutes: Routes = [
     HomeReviewsComponent,
     HomeHeaderComponent,
     SearchboxComponent,
-    GearsLoadingSpinnerComponent
+    GearsLoadingSpinnerComponent,
+    FlagsComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +69,14 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, { enableTracing: false }),
     HttpClientModule,
     ApolloModule,
-    HttpLinkModule
+    HttpLinkModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [StoreService],
   bootstrap: [AppComponent]
