@@ -20,9 +20,6 @@ body {
   background: #000 url(assets/images/bg3.jpg) no-repeat;
   background-size: cover;
 }
-.flags {
-  padding-left: 40px;
-}
 /*-- banner --*/
 .banner {
   background: rgba(0, 0, 0, 0.38);

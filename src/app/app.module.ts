@@ -29,6 +29,7 @@ import { Error404Component } from './components/error-404/error-404.component';
 import { SearchboxComponent } from './components/searchbox/searchbox.component';
 import { GearsLoadingSpinnerComponent } from './components/loading-spinner';
 import { environment } from '../environments/environment';
+import { FlagsComponent } from './components/nav/flags/flags.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -59,7 +60,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeReviewsComponent,
     HomeHeaderComponent,
     SearchboxComponent,
-    GearsLoadingSpinnerComponent
+    GearsLoadingSpinnerComponent,
+    FlagsComponent
   ],
   imports: [
     BrowserModule,
