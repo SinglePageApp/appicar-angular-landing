@@ -1,9 +1,62 @@
 {
-  "Home" : "Home",
-  "About" : "About",
-  "Stores" : "Stores",
-  "My Account" : "My Account",
-  "Services" : "Services",
-  "Reviews" : "Reviews",
-  "Contact" : "Contact"
+  "nav": {
+    "home" : "Home",
+    "about" : "About",
+    "stores" : "Stores",
+    "myAccount" : "My Account",
+    "services" : "Services",
+    "reviews" : "Reviews",
+    "contact" : "Contact"
+  },
+  "home-page": {
+    "header": {
+      "title": "Your online booking and delivery platform",
+      "description": "Download now the app for your cell phone and let us take care of the whole process of reservations and orders for delivery so you can enjoy more of your outings or relax at home while you're waiting for your order."
+    },
+    "contact": {
+      "contact": "Contact",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "SEND"
+    },
+    "reviews": {
+      "title": "What Our Customers are Saying"
+    },
+    "services": {
+      "title": "Our Services",
+      "description": "We offer you a range of amazing services that will revolutionize your experience as a customer:"
+    },
+    "stores": {
+      "title": "Our Stores"
+    }
+  },
+  "about-page": {
+    "title":  "About Us",
+    "offers": "Our Offers",
+    "team": {
+      "title": "Work Team",
+      "eng": "Eng.",
+      "member1": "Appicar's CTO. I.T. Engineer and FullStack Developer. Main creator of Appicar's website, web app and mobile app."
+    }
+  },
+  "searchbox": {
+    "iWant" : "Today, I want to",
+    "eat" : "eat",
+    "drink" : "drink",
+    "go" : "Go!"
+  },
+  "loading-spinner": {
+    "loading": "Loading..."
+  },
+  "footer": {
+    "title": "Get in touch with us"
+  },
+  "copyright": {
+    "description": "All Rights Reserved. Design by"
+  },
+  "error-404": {
+    "description": "Oooooops! Looks like nothing was found at this location. Maybe try on of the links below, click on the top menu or try a search?"
+  }
 }

@@ -12,13 +12,12 @@
         <div class="clearfix"> </div>
       </div>
       <div class="banner-info">
-        <h2>Your online booking and delivery platform</h2>
-        <p>Download now the app for your cell phone and let us take care of the whole process of reservations and orders for
-          delivery so you can enjoy more of your outings or relax at home while you're waiting for your order.</p>
+        <h2 translate>home-page.header.title</h2>
+        <p translate>home-page.header.description</p>
       </div>
 
       <gears-loading-spinner *ngIf="isLoading">
-        Loading...
+        {{ 'loading-spinner.loading' | translate }}
       </gears-loading-spinner>
 
       <div class="banner-grads" *ngIf="!isLoading">
