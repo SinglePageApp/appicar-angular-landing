@@ -16,78 +16,7 @@ body {
   font-size: 100%;
   font-family: "Roboto Condensed", sans-serif;
 }
-.background {
-  background: #000 url(assets/images/bg3.jpg) no-repeat;
-  background-size: cover;
-}
-/*-- banner --*/
-.banner {
-  background: rgba(0, 0, 0, 0.38);
-  background-size: cover;
-  padding: 1em 0 3em;
-  text-shadow: 1px 1px #000000;
-}
-.header {
-  border-bottom: solid 1px rgba(134, 134, 134, 0.23);
-}
-.logo {
-  float: left;
-}
-.logo h1 {
-  margin: 0;
-}
-.logo h1 a img {
-  width: 195px;
-  position: absolute;
-}
-.banner-info {
-  text-align: center;
-  margin: 4em auto 4em;
-  width: 70%;
-}
-.banner-info h2 {
-  font-size: 50px;
-  font-family: "Francois One", sans-serif;
-  color: #ffffff;
-  margin: 0;
-}
-.banner-info p {
-  color: #c0c0c0;
-  font-size: 1em;
-  line-height: 1.8em;
-  margin: 2em 0 0 0;
-}
-.banner-grad-img {
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
-}
-.banner-grad-img img {
-  width: 100%;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border: solid 8px #fff;
-  cursor: pointer;
-}
-.banner-grad-img img:hover {
-  border-color: #fd5c63;
-}
-.banner-grad-img h4 {
-  margin: 1em 0 0 0;
-  color: #fd5c63;
-  font-size: 1.5em;
-  font-family: "Francois One", sans-serif;
-}
-.banner-grad-img .storeDescription {
-  font-weight: bold;
-  color: #ccc;
-}
-.banner-grad-img p {
-  color: #c0c0c0;
-}
+
 .search-box {
   padding: 0 20% 0 20%;
   margin-top: 20px;
@@ -103,7 +32,6 @@ body {
 .search-input {
   max-width: 975px;
 }
-/*-- //banner --*/
 /*-- special --*/
 .special {
   padding: 3em 0;
@@ -508,11 +436,6 @@ i.fa.fa-google-plus {
 }
 /*-- //copyright --*/
 /*--Shortcodes--*/
-.bg-img {
-  background: url(assets/images/bg3.jpg) no-repeat 0px -429px;
-  background-size: cover;
-  height: 160px;
-}
 .code-banner {
   padding: 1em 0 2em;
 }
@@ -1016,92 +939,6 @@ h2.typoh2 {
   margin: 1em 0 0 0;
 }
 /*-- //about --*/
-/*-- offers --*/
-.jarallax {
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-.offers {
-  background: url(assets/images/bg3.jpg) no-repeat 0px 0px;
-  padding: 4em 0;
-  background-size: cover;
-  text-shadow: 1px 1px #000000;
-}
-.offers-grids {
-  margin: 4em 0 0 0;
-}
-.offers-left-heading h4 {
-  font-size: 1.5em;
-  margin: 0 0 1em 0;
-  color: #ffffff;
-  font-family: "Francois One", sans-serif;
-  line-height: 1.5em;
-}
-.offers-number {
-  float: left;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  background: #ffffff;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  text-shadow: none;
-}
-.offers-number p {
-  font-size: 1.5em;
-  color: #000000;
-  margin: 0;
-  line-height: 2em;
-}
-.offers-text {
-  float: right;
-  width: 85%;
-}
-.offers-text p {
-  color: #ffffff;
-  font-size: 1em;
-  line-height: 1.8em;
-  margin: 0;
-}
-.offers-left-middle {
-  margin: 2em 0;
-}
-.wthree-offers-right h5 {
-  color: #ffffff;
-  font-size: 1.5em;
-  margin: 0 0 1em 0;
-  font-family: "Francois One", sans-serif;
-  line-height: 1.5em;
-}
-.wthree-offers-right p {
-  color: #ffffff;
-  font-size: 1em;
-  line-height: 1.5em;
-  font-weight: 600;
-  margin: 0;
-}
-.wthree-offers-right ul {
-  margin: 1em 0 0 0;
-  padding: 0;
-}
-.wthree-offers-right ul li {
-  display: block;
-  background: url(assets/images/arrow1.png) no-repeat 0px 2px;
-  margin-bottom: 1em;
-}
-.wthree-offers-right ul li a {
-  font-size: 1em;
-  margin: 0;
-  color: #ffffff;
-  padding-left: 2em;
-  text-decoration: none;
-}
-/*-- //offers --*/
 /*-- team --*/
 .team {
   padding: 4em 0;
@@ -1627,10 +1464,6 @@ h2.typoh2 {
   }
 }
 @media (max-width: 800px) {
-  .bg-img {
-    background: url(assets/images/bg3.jpg) no-repeat 0px -91px;
-    background-size: cover;
-  }
   .search-box {
     padding: 0 6% 0 6%;
     margin-top: 20px;
@@ -1924,10 +1757,6 @@ h2.typoh2 {
   .offers-text {
     width: 80%;
   }
-  .bg-img {
-    background: url(assets/images/bg3.jpg) no-repeat 0px -83px;
-    background-size: cover;
-  }
   .agileits-caption h4 {
     font-size: 1em;
   }
@@ -2084,10 +1913,6 @@ h2.typoh2 {
   }
   .banner {
     padding: 1em 0 1em;
-  }
-  .bg-img {
-    background: url(assets/images/bg3.jpg) no-repeat 0px -64px;
-    background-size: cover;
   }
   .offers-left-heading h4 {
     font-size: 1em;
