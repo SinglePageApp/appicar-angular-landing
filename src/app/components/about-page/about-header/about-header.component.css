@@ -1,0 +1,23 @@
+.bg-img {
+  background: url(../assets/images/bg1.jpg) no-repeat 0px -429px;
+  background-size: cover;
+  height: 160px;
+}
+@media (max-width: 800px) {
+  .bg-img {
+    background: url(../assets/images/bg1.jpg) no-repeat 0px -91px;
+    background-size: cover;
+  }
+}
+@media (max-width: 384px) {
+  .bg-img {
+    background: url(../assets/images/bg1.jpg) no-repeat 0px -83px;
+    background-size: cover;
+  }
+}
+@media (max-width: 320px) {
+  .bg-img {
+    background: url(../assets/images/bg1.jpg) no-repeat 0px -64px;
+    background-size: cover;
+  }
+}

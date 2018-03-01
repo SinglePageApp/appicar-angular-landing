@@ -1,7 +1,9 @@
 /* DEFAULT DISPLAY */
 .top-nav {
+  position: relative;
   margin: 2em 0 0 0;
   float: right;
+  z-index: 9999;
 }
 .top-nav ul {
   padding: 0;
