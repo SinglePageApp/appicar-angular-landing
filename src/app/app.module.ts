@@ -30,6 +30,7 @@ import { SearchboxComponent } from './components/searchbox/searchbox.component';
 import { GearsLoadingSpinnerComponent } from './components/loading-spinner';
 import { environment } from '../environments/environment';
 import { FlagsComponent } from './components/nav/flags/flags.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -61,7 +62,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HomeHeaderComponent,
     SearchboxComponent,
     GearsLoadingSpinnerComponent,
-    FlagsComponent
+    FlagsComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,

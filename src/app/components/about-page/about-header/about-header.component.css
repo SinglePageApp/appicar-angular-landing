@@ -1,7 +1,10 @@
 .bg-img {
   background: url(../assets/images/bg1.jpg) no-repeat 0px -429px;
   background-size: cover;
+  position: relative;
+  top: -65px;
   height: 160px;
+  margin-bottom: -65px;
 }
 @media (max-width: 800px) {
   .bg-img {
