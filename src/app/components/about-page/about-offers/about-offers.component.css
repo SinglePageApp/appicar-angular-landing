@@ -1,4 +1,4 @@
-/*-- offers --*/
+/*-- NORMAL DISPLAY --*/
 .jarallax {
   position: relative;
   background-size: cover;
@@ -83,4 +83,66 @@
   padding-left: 2em;
   text-decoration: none;
 }
-/*-- //offers --*/
+/*--// NORMAL DISPLAY --*/
+
+/*-- DISPLAY: 991px --*/
+@media (max-width: 991px) {
+  .wthree-offers-right {
+    margin: 2em 0 0 0;
+  }
+}
+/*--// DISPLAY: 991px --*/
+
+/*-- DISPLAY: 480px --*/
+@media (max-width: 480px) {
+  .offers {
+    padding: 2em 0;
+  }
+  .offers-grids {
+    margin: 2em 0 0 0;
+  }
+  .wthree-offers-right h5 {
+    font-size: 1.2em;
+  }
+}
+/*--// DISPLAY: 480px --*/
+
+/*-- DISPLAY: 414px --*/
+@media (max-width: 414px) {
+  .offers-text {
+    float: right;
+    width: 80%;
+  }
+}
+/*--// DISPLAY: 414px --*/
+
+/*-- DISPLAY: 384px --*/
+@media (max-width: 384px) {
+  .offers-text {
+    width: 80%;
+  }
+}
+/*--// DISPLAY: 384px --*/
+
+/*-- DISPLAY: 320px --*/
+@media (max-width: 320px) {
+  .offers-left-heading h4 {
+    font-size: 1em;
+  }
+  .offers-number {
+    float: none;
+    margin: 0 auto 1em;
+  }
+  .offers-text {
+    width: 100%;
+    text-align: center;
+    float: none;
+  }
+  .wthree-offers-right {
+    padding: 0;
+  }
+  .wthree-offers-right ul li a {
+    font-size: 0.9em;
+  }
+}
+/*--// DISPLAY: 320px --*/
