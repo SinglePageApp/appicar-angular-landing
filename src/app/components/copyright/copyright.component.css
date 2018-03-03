@@ -38,6 +38,9 @@
   .w3agile-list ul li {
     margin: 0 1em;
   }
+  .agileinfo {
+    margin: 0;
+  }
 }
 /*--// DISPLAY: 480px --*/
 
@@ -56,3 +59,11 @@
   }
 }
 /*--// DISPLAY: 384px --*/
+
+/*-- DISPLAY: 320px --*/
+@media (max-width: 320px) {
+  .w3agile-list ul li {
+    margin: 0 0.2em;
+  }
+}
+/*--// DISPLAY: 320px --*/

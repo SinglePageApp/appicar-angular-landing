@@ -1,3 +1,4 @@
+/*-- NORMAL DISPLAY --*/
 .header {
   position: relative;
   left: 160px;
@@ -12,3 +13,28 @@
   position: absolute;
   z-index: 9999999999;
 }
+/*--// NORMAL DISPLAY --*/
+
+/*-- DISPLAY: 480px --*/
+@media (max-width: 480px) {
+  .logo h1 a img {
+    width: 150px;
+  }
+}
+/*--// DISPLAY: 480px --*/
+
+/*-- DISPLAY: 375px --*/
+@media (max-width: 375px) {
+  .logo h1 a {
+    font-size: 1.3em;
+  }
+}
+/*--// DISPLAY: 375px --*/
+
+/*-- DISPLAY: 320px --*/
+@media (max-width: 320px) {
+  .logo h1 a {
+    font-size: 1.2em;
+  }
+}
+/*--// DISPLAY: 320px --*/

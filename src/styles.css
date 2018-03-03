@@ -27,72 +27,16 @@ body a {
   font-family: "Francois One", sans-serif;
 }
 /*--Shortcodes--*/
-.code-banner {
-  padding: 1em 0 2em;
-}
-.menu-heading h2,
 .about-heading h2,
 .offers-heading h3,
 .team-heading h3,
 .contact-heading h2,
-.contact-grids h3,
 .contact-form h3 {
   color: #fd5c63;
   font-size: 3em;
   margin: 0;
   text-align: center;
   font-family: "Francois One", sans-serif;
-}
-h3.hdg {
-  font-size: 2.5em;
-  color: #000 !important;
-}
-.show-grid [class^="col-"] {
-  background: #fff;
-  text-align: center;
-  margin-bottom: 10px;
-  line-height: 2em;
-  border: 10px solid #f0f0f0;
-}
-.show-grid [class*="col-"]:hover {
-  background: #e0e0e0;
-}
-.grid_3 {
-  margin-bottom: 2em;
-}
-.xs h3,
-h3.m_1 {
-  color: #000;
-  font-size: 1.7em;
-  font-weight: 300;
-  margin-bottom: 1em;
-}
-.grid_3 p {
-  color: #555;
-  font-size: 0.85em;
-  margin-bottom: 1em;
-  font-weight: 300;
-}
-.grid_4 {
-  background: none;
-  margin-top: 50px;
-}
-.label {
-  font-weight: 300 !important;
-  border-radius: 4px;
-}
-.grid_5 {
-  background: none;
-  padding: 2em 0;
-}
-.grid_5 h3,
-.grid_5 h2,
-.grid_5 h1,
-.grid_5 h4,
-.grid_5 h5,
-h3.hdg {
-  margin-bottom: 1em;
-  color: #333;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -105,36 +49,6 @@ h3.hdg {
 .tab-content > .active {
   display: block;
   visibility: visible;
-}
-.pagination > .active > a,
-.pagination > .active > span,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus {
-  z-index: 0;
-}
-.badge-primary {
-  background-color: #03a9f4;
-}
-.badge-success {
-  background-color: #8bc34a;
-}
-.badge-warning {
-  background-color: #ffc107;
-}
-.badge-danger {
-  background-color: #e51c23;
-}
-.grid_3 p {
-  line-height: 2em;
-  color: #888;
-  font-size: 0.9em;
-  margin-bottom: 1em;
-  font-weight: 300;
-}
-.bs-docs-example {
-  margin: 1em 0;
 }
 section#tables p {
   margin-top: 1em;
@@ -176,9 +90,6 @@ section#tables p {
   border: none;
   text-shadow: none;
 }
-.nav-tabs {
-  margin-bottom: 1em;
-}
 .alert {
   font-size: 0.85em;
 }
@@ -209,45 +120,16 @@ ol {
 h2.typoh2 {
   margin: 0 0 10px;
 }
-@media (max-width: 768px) {
-  .grid_5 {
-    padding: 0 0 1em;
-  }
-  .grid_3 {
-    margin-bottom: 0em;
-  }
-}
 @media (max-width: 640px) {
   h1,
-  .h1,
   h2,
-  .h2,
-  h3,
-  .h3 {
+  h3 {
     margin-top: 0px;
     margin-bottom: 0px;
   }
-  .grid_5 h3,
-  .grid_5 h2,
-  .grid_5 h1,
-  .grid_5 h4,
-  .grid_5 h5,
-  h3.hdg,
-  h3.bars {
-    margin-bottom: 0.5em;
-  }
-  .progress {
-    height: 10px;
-    margin-bottom: 10px;
-  }
-  ol.breadcrumb li,
-  .grid_3 p,
   ul.list-group li,
   li.list-group-item1 {
     font-size: 14px;
-  }
-  .breadcrumb {
-    margin-bottom: 10px;
   }
   .well {
     font-size: 14px;
@@ -255,9 +137,6 @@ h2.typoh2 {
   }
   h2.typoh2 {
     font-size: 1.5em;
-  }
-  .grid_4 {
-    margin-top: 30px;
   }
 }
 @media (max-width: 480px) {
@@ -282,13 +161,8 @@ h2.typoh2 {
   }
 }
 @media (max-width: 320px) {
-  .grid_4 {
-    margin-top: 18px;
-  }
   .alert,
   p,
-  ol.breadcrumb li,
-  .grid_3 p,
   .well,
   ul.list-group li,
   li.list-group-item1,
@@ -331,363 +205,29 @@ h2.typoh2 {
   }
 }
 /*--//Shortcodes--*/
-/*-- about --*/
-.about {
-  padding: 4em 0;
-  background: #ffffff;
-}
-.about-grids {
-  margin: 1em 0 0 0;
-}
-.wthree-about-left-info {
-  background: #eaf7fd;
-  padding: 0.5em;
-}
-.wthree-about-left-info img {
-  width: 100%;
-}
-.agileits-about-right h5 {
-  color: #000;
-  font-size: 1em;
-  line-height: 1.5em;
-  font-weight: 600;
-  margin: 0;
-}
-.agileits-about-right p {
-  margin: 1em 0 0 0;
-  font-size: 0.875em;
-  color: #bbbbbb;
-  line-height: 1.8em;
-}
-.agileits-about-right p span {
-  display: block;
-  margin: 1em 0 0 0;
-}
-/*-- //about --*/
-/*-- team --*/
-.team {
-  padding: 4em 0;
-  background: #ffffff;
-}
-.team-info {
-  text-align: center;
-}
-.team-grids {
-  margin: 4em 0 0 0;
-}
-.team-grid img {
-  width: 100%;
-}
-.team-grid h4 {
-  margin: 1em 0 0 0;
-  color: #fd5c63;
-  font-size: 1.56em;
-  font-family: "Francois One", sans-serif;
-}
-.team-grid p {
-  margin: 1em 0 0 0;
-  font-size: 0.875em;
-  color: #bbbbbb;
-  line-height: 1.8em;
-}
-.icons {
-  margin: 1em 0 0 0;
-}
-.icons ul {
-  padding: 0;
-  margin: 0;
-}
-.icons ul li {
-  display: inline-block;
-  margin: 0 0.5em;
-  text-align: center;
-}
-.icons ul li a.twitter {
-  width: 40px;
-  height: 40px;
-  display: block;
-  margin: 0 auto;
-  padding: 0.5em 0 0 0;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.icons ul li span {
-  display: block;
-  margin: 1em 0 0 0;
-  color: #000000;
-  font-size: 1em;
-  font-weight: 600;
-}
-.icons ul li a.twitter {
-  background: #55acee;
-}
-.icons ul li a.linkedin {
-  background: #0092d8;
-}
-.icons ul li a.chrome {
-  background: #dc4e41;
-}
-.icons ul li a.twitter:hover {
-  background: #fd5c63;
-}
-/*-- //team --*/
 /*-- responsive --*/
-@media (max-width: 1080px) {
-  .agileits-caption {
-    bottom: -82%;
-  }
-  .agile-menu-grid:hover .agileits-caption h4 {
-    margin-top: 2em;
-  }
-}
-@media (max-width: 991px) {
-  .banner-info {
-    width: 95%;
-  }
-  .banner-grad {
-    float: left;
-    width: 33.33%;
-  }
-  .banner-grad-img {
-    width: 65%;
-  }
-  .agileits-about-right h5 {
-    margin: 1em 0 0 0;
-  }
-  .wthree-offers-right {
-    margin: 2em 0 0 0;
-  }
-  .team-grid {
-    width: 33.33%;
-    float: left;
-  }
-  .team-grid h4 {
-    font-size: 1.3em;
-  }
-  .menu-grid {
-    float: left;
-    width: 50%;
-    margin: 0 0 2em 0;
-  }
-  .agileits-caption {
-    bottom: -73%;
-  }
-  .agileits-caption {
-    height: 220px;
-  }
-  .time {
-    margin-left: 29em;
-  }
-}
 @media (max-width: 640px) {
-  .banner-info h2 {
-    font-size: 3em;
-  }
   .special-heading h3,
   .features h3,
   .customer-heading h3,
   .footer-heading h3 {
     font-size: 2.5em;
   }
-  .icons ul li {
-    margin: 0 0.2em;
-  }
-  .team-grid h4 {
-    font-size: 1.2em;
-  }
-  .agileits-caption {
-    height: 195px;
-  }
-  .time {
-    margin-left: 20em;
-    width: 17%;
-  }
 }
 @media (max-width: 480px) {
-  .logo h1 a img {
-    width: 150px;
-  }
-  .banner-info {
-    width: 100%;
-    margin: 3em auto 3em;
-  }
-  .banner-info h2 {
-    font-size: 2em;
-  }
-  .banner-grad-img h4 {
-    font-size: 1em;
-  }
-  .banner {
-    padding: 1em 0 2em;
-  }
   .special-heading h3,
   .features h3,
   .customer-heading h3,
   .footer-heading h3 {
     font-size: 2em;
   }
-  .about {
-    padding: 2em 0;
-  }
   .codes-heading h2,
-  .menu-heading h2,
   .about-heading h2,
   .offers-heading h3,
   .team-heading h3,
   .contact-heading h2,
-  .contact-grids h3,
   .contact-form h3 {
     font-size: 2em;
-  }
-  .offers {
-    padding: 2em 0;
-  }
-  .offers-grids {
-    margin: 2em 0 0 0;
-  }
-  .wthree-offers-right h5 {
-    font-size: 1.2em;
-  }
-  .team {
-    padding: 2em 0;
-  }
-  .team-grids {
-    margin: 2em 0 0 0;
-  }
-  .team-grid {
-    width: 100%;
-    float: none;
-  }
-  .team-grid:nth-child(2) {
-    margin: 2em 0;
-  }
-  .banner-grad-img img {
-    border: solid 4px #fff;
-  }
-  .agileits-caption {
-    height: 150px;
-  }
-  .agile-menu-grid:hover .agileits-caption h4 {
-    margin-top: 1em;
-  }
-  .media-left.response-text-left {
-    width: 25%;
-  }
-  .time {
-    margin-left: 12em;
-    width: 28%;
-  }
-  .agileinfo {
-    margin: 0;
-  }
-}
-@media (max-width: 414px) {
-  .banner-info {
-    margin: 2em auto;
-  }
-  .banner-grad-img {
-    width: 90%;
-  }
-  .banner-info p {
-    margin: 1em 0 0 0;
-  }
-  .agileits-caption {
-    height: 135px;
-  }
-  .offers-text {
-    float: right;
-    width: 80%;
-  }
-  .agileits-caption h4 {
-    font-size: 1.2em;
-  }
-  .agileits-caption p {
-    font-size: 1.5em;
-  }
-  .agileits-caption {
-    height: 125px;
-  }
-}
-@media (max-width: 384px) {
-  .offers-text {
-    width: 80%;
-  }
-  .agileits-caption h4 {
-    font-size: 1em;
-  }
-  .agileits-caption p {
-    font-size: 1.5em;
-  }
-  .agileits-caption {
-    height: 114px;
-  }
-  .agile-menu-grid:hover .agileits-caption h4 {
-    margin-top: 1.5em;
-  }
-}
-@media (max-width: 375px) {
-  .logo h1 a {
-    font-size: 1.3em;
-  }
-  .banner-info h2 {
-    font-size: 1.5em;
-  }
-}
-@media (max-width: 320px) {
-  .logo h1 a {
-    font-size: 1.2em;
-  }
-  .banner-info h2 {
-    font-size: 1.4em;
-  }
-  .banner-info p {
-    line-height: 1.5em;
-  }
-  .banner-grad-img {
-    width: 100%;
-  }
-  .banner-grad-img h4 {
-    font-size: 0.875em;
-  }
-  .banner-info {
-    margin: 2em auto 1em;
-  }
-  .w3agile-list ul li {
-    margin: 0 0.2em;
-  }
-  .banner {
-    padding: 1em 0 1em;
-  }
-  .offers-left-heading h4 {
-    font-size: 1em;
-  }
-  .offers-number {
-    float: none;
-    margin: 0 auto 1em;
-  }
-  .offers-text {
-    width: 100%;
-    text-align: center;
-    float: none;
-  }
-  .wthree-offers-right {
-    padding: 0;
-  }
-  .menu-grid {
-    float: none;
-    width: 100%;
-  }
-  .agileits-caption {
-    height: 175px;
-  }
-  .agileits-caption h4 {
-    font-size: 1.5em;
-  }
-  .wthree-offers-right ul li a {
-    font-size: 0.9em;
   }
 }
 /*-- //responsive --*/
