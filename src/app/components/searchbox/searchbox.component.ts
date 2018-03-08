@@ -5,11 +5,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './searchbox.component.html',
   styleUrls: ['./searchbox.component.css']
 })
+
 export class SearchboxComponent implements OnInit {
 
-  constructor() { }
+  public menuItemType: string;
+
+  constructor() {
+    this.menuItemType = 'eat';
+  }
 
   ngOnInit() {
   }
 
+  changeMenuItemType(menuItemType: string) {
+    this.menuItemType = menuItemType;
+  }
 }
