@@ -1,24 +1,18 @@
 <div class="background">
+  <ul class="cb-slideshow">
+      <li><span>Image 01</span></li>
+      <li><span>Image 02</span></li>
+      <li><span>Image 03</span></li>
+  </ul>
   <div class="banner">
     <div class="container">
-      <div class="header">
-        <div class="logo">
-          <h1>
-            <a href="/">
-              <img alt="Appicar" src="../assets/images/logo.svg" />
-            </a>
-          </h1>
-        </div>
-        <div class="clearfix"> </div>
-      </div>
       <div class="banner-info">
-        <h2>Your online booking and delivery platform</h2>
-        <p>Download now the app for your cell phone and let us take care of the whole process of reservations and orders for
-          delivery so you can enjoy more of your outings or relax at home while you're waiting for your order.</p>
+        <h2 translate>home-page.header.title</h2>
+        <p translate>home-page.header.description</p>
       </div>
 
       <gears-loading-spinner *ngIf="isLoading">
-        Loading...
+        {{ 'loading-spinner.loading' | translate }}
       </gears-loading-spinner>
 
       <div class="banner-grads" *ngIf="!isLoading">
@@ -34,7 +28,7 @@
           </div>
         </div>
 
-        <div class="clearfix"> </div>
+        <div class="clearfix"></div>
         <app-searchbox></app-searchbox>
       </div>
 

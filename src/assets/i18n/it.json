@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home" : "Inizio",
+    "about" : "Chi Siamo",
+    "stores" : "Negozi",
+    "myAccount" : "Il Mio Account",
+    "services" : "Servizi",
+    "reviews" : "Recensioni",
+    "contact" : "Contatto"
+  },
+  "home-page": {
+    "header": {
+      "title": "La tua piattaforma di prenotazione e consegna online",
+      "description": "Scarica ora l'app per il tuo cellulare e facci occupare dell'intero processo di prenotazioni e ordini per la consegna in modo da poter godere di più delle tue uscite o rilassarti a casa mentre aspetti il tuo ordine."
+    },
+    "contact": {
+      "contact": "Contatto",
+      "name": "Nome",
+      "email": "Email",
+      "subject": "Affari",
+      "message": "Messaggio",
+      "send": "INVIARE"
+    },
+    "reviews": {
+      "title": "Cosa Dicono I Nostri Clienti"
+    },
+    "services": {
+      "title": "I Nostri Servizi",
+      "description": "Ti offriamo una gamma di incredibili servizi che rivoluzioneranno la tua esperienza di cliente:"
+    },
+    "stores": {
+      "title": "I Nostri Negozi"
+    }
+  },
+  "about-page": {
+    "title":  "Riguardo a Noi",
+    "offers": "Le Nostre Offerte",
+    "team": {
+      "title": "Gruppo di Lavoro",
+      "eng": "Ing.",
+      "member1": "CTO di Appicar. Ingegnere Informatico e Programmatore Full-Stack. Creatore principale del sito web, dell'app web e dell'app mobile di Appicar."
+    }
+  },
+  "searchbox": {
+    "iWant" : "Oggi, voglio",
+    "eat" : "mangiare",
+    "drink" : "bere",
+    "go" : "Cercare!"
+  },
+  "loading-spinner": {
+    "loading": "Caricamento in corso..."
+  },
+  "footer": {
+    "title": "Mettetevi in contatto con noi"
+  },
+  "copyright": {
+    "description": "Tutti i diritti riservati. Disegnato da"
+  },
+  "error-404": {
+    "description": "Sembra che non sia stato trovato nulla in questa posizione. Forse prova dei link qui sotto, clicca sul menu in alto o prova una ricerca?"
+  }
+}
