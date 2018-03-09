@@ -70,17 +70,19 @@
   transition: background 0.5s, color 0.2s;
 }
 .effect-1:after {
-  top: 25px;
-  left: 25px;
-  box-shadow: 0 0 0 2px #ffffff;
+  top: 10px;
+  left: 10px;
+  box-shadow: 0 0 0 2px #ff9900;
   -webkit-transition: -webkit-transform 0.5s, opacity 0.2s;
-  -webkit-transform: scale(0.8);
   -moz-transition: -moz-transform 0.5s, opacity 0.2s;
-  -moz-transform: scale(0.8);
-  -ms-transform: scale(0.8);
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5);
   transition: transform 0.5s, opacity 0.2s;
-  transform: scale(0.8);
   opacity: 0;
+  width: 170px;
+  height: 150px;
 }
 .w3ls-special-img:hover.w3ls-special-text {
   background: #ff7200;

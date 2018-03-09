@@ -43,9 +43,13 @@
   },
   "searchbox": {
     "iWant" : "Today, I want to",
-    "eat" : "eat",
-    "drink" : "drink",
-    "go" : "Go!"
+    "eatAction" : "eat",
+    "drinkAction" : "drink",
+    "go" : "Go!",
+    "input": "Input a ",
+    "food": "food",
+    "drink": "drink",
+    "category": " category..."
   },
   "loading-spinner": {
     "loading": "Loading..."

@@ -3,25 +3,30 @@
     <span class="input-group-addon" id="basic-addon1">
       <span translate>searchbox.iWant</span>
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {{ 'searchbox.' + this.menuItemType | translate }}
+        {{ 'searchbox.' + menuItem.getAction() + 'Action' | translate }}
         <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
         <li>
-          <a routerLink="" (click)="changeMenuItemType('eat')" translate>searchbox.eat</a>
+          <a routerLink="" (click)="changeMenuItemType('eat')" translate>searchbox.eatAction</a>
         </li>
         <li>
-          <a routerLink="" (click)="changeMenuItemType('drink')" translate>searchbox.drink</a>
+          <a routerLink="" (click)="changeMenuItemType('drink')" translate>searchbox.drinkAction</a>
         </li>
       </ul>
     </span>
     <input type="text"
-          name="menuItemCategory"
-          class="form-control"
-          placeholder="..."
+           id="menuItemCategory"
+           #name="ngModel"
+           class="form-control"
+           [placeholder]="('searchbox.input'| translate) + ('searchbox.' + menuItem.toString() | translate) + ('searchbox.category' | translate)"
+           [(ngModel)]="menuItemCategory"
+           required
+           #spy
+           (keyup.enter)="search()"
     />
     <span class="input-group-btn">
-      <button class="btn btn-default" type="button" translate>searchbox.go</button>
+      <button class="btn btn-default" type="button" (click)="search()" translate>searchbox.go</button>
     </span>
   </div>
 </div>

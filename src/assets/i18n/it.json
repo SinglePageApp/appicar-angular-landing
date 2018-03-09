@@ -43,9 +43,13 @@
   },
   "searchbox": {
     "iWant" : "Oggi, voglio",
-    "eat" : "mangiare",
-    "drink" : "bere",
-    "go" : "Cercare!"
+    "eatAction" : "mangiare",
+    "drinkAction" : "bere",
+    "go" : "Cercare!",
+    "input": "Inserisci una categoria ",
+    "food": "alimentare",
+    "drink": "di bevande",
+    "category": "..."
   },
   "loading-spinner": {
     "loading": "Caricamento in corso..."

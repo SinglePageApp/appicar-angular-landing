@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { StoreService } from '../../../services/store.service';
+import Store from '../../../models/Store';
 
 @Component({
   selector: 'app-home-stores',
@@ -9,9 +11,10 @@ import { StoreService } from '../../../services/store.service';
 })
 export class HomeStoresComponent implements OnInit {
 
-  currentRowNum: number;
-  isLoading: boolean;
-  stores: any;
+  private currentRowNum: number;
+
+  public isLoading: boolean;
+  public stores: any;
 
   constructor(private storeService: StoreService) {
     this.isLoading = true;
@@ -19,10 +22,20 @@ export class HomeStoresComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.storeService.getStores().subscribe(({ data, loading }) => {
-      this.isLoading = false;
-      this.stores = data.stores;
-    });
+    this.storeService.findStores();
+    this.storeService.getStores().subscribe(
+      response => {
+        this.isLoading = response.isLoading;
+        this.stores = response.stores;
+        console.log('STORES');
+        console.log(this.stores[0]);
+      },
+      error => {
+        console.log('Observable error:');
+        console.log(error);
+      },
+      () => {}
+    );
   }
 
   isRowOdd(i: number) {
