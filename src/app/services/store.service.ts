@@ -9,6 +9,7 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class StoreService {
 
+  public menuItem: MenuItem;
   private loading: boolean;
   private stores: any;
   private subject: Subject<any>;
@@ -31,6 +32,7 @@ export class StoreService {
   /** GET stores from the server */
   public findStores(): any {
     this.loading = true;
+    this.menuItem = null;
 
     const query = gql`
       {
@@ -49,7 +51,8 @@ export class StoreService {
       this.stores = data.stores;
       this.subject.next({
         isLoading: this.loading,
-        stores: this.stores
+        stores: this.stores,
+        menuItem: this.menuItem
       });
     });
   }
@@ -77,6 +80,7 @@ export class StoreService {
    */
   findStoresByMenuItem(menuItem: MenuItem) {
     this.loading = true;
+    this.menuItem = menuItem;
 
     const query = gql`
       {
@@ -95,7 +99,8 @@ export class StoreService {
       this.stores = data.stores;
       this.subject.next({
         isLoading: this.loading,
-        stores: this.stores
+        stores: this.stores,
+        menuItem: this.menuItem
       });
     });
   }

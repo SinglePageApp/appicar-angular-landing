@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { StoreService } from '../../services/store.service';
 import MenuItem from '../../models/MenuItem';
@@ -11,20 +11,31 @@ import Drink from '../../models/Drink';
   templateUrl: './searchbox.component.html',
   styleUrls: ['./searchbox.component.css']
 })
-
-export class SearchboxComponent implements OnInit {
+/**
+ * class :: SearchboxComponent
+ *
+ * Component for doing the search.
+ */
+export class SearchboxComponent {
 
   public menuItem: MenuItem;
   public menuItemCategory: string;
 
+  /**
+   * Constructor.
+   *
+   * @param storeService StoreService dependency injection.
+   */
   constructor(private storeService: StoreService) {
     this.menuItem = new Food();
     this.menuItemCategory = '';
   }
 
-  ngOnInit() {
-  }
-
+  /**
+   * Changes the menu item's type to Food or Drink.
+   *
+   * @param menuItemType Possible values are "eat" or "drink".
+   */
   public changeMenuItemType(menuItemType: string) {
     if (menuItemType === 'eat') {
       this.menuItem = new Food();
@@ -33,8 +44,23 @@ export class SearchboxComponent implements OnInit {
     }
   }
 
+  /**
+   * Search stores by the menu item's category they have.
+   */
   public search() {
     this.menuItem.setCategory(this.menuItemCategory);
-    this.storeService.findStoresByMenuItem(this.menuItem);
+
+    if (this.menuItemCategory) {
+      this.storeService.findStoresByMenuItem(this.menuItem);
+    }
+  }
+
+  /**
+   * Resets the search's input and brings all the stores that appeared in the initial load.
+   */
+  public reset() {
+    this.menuItemCategory = '';
+    this.menuItem.setCategory('');
+    this.storeService.findStores();
   }
 }

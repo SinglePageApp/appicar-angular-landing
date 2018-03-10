@@ -14,16 +14,9 @@
 .search-input {
   max-width: 975px;
 }
-
-
-.ng-valid[required], .ng-valid.required  {
-  border-left: 5px solid #42A948; /* green */
+.input-group-btn button {
+  height: 34px;
 }
-.ng-invalid:not(form)  {
-  border-left: 5px solid #a94442; /* red */
-}
-
-
 /*--// NORMAL DISPLAY --*/
 
 /*-- DISPLAY: 800px --*/

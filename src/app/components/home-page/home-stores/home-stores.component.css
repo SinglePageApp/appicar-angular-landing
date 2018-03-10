@@ -1,4 +1,16 @@
 /*-- NORMAL DISPLAY --*/
+h4 {
+  margin: 1em 0 1em 0;
+  font-size: 1.56em;
+  font-family: "Francois One", sans-serif;
+  text-align: center;
+}
+h4 .results {
+  color: #a0a0a0;
+}
+h4 .no-results {
+  color: #cf0000;
+}
 .special {
   padding: 3em 0;
   background: #ffffff;

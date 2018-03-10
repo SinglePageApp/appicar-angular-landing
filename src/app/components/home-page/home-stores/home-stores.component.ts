@@ -3,6 +3,8 @@ import { Observable } from 'rxjs/Observable';
 
 import { StoreService } from '../../../services/store.service';
 import Store from '../../../models/Store';
+import MenuItem from '../../../models/MenuItem';
+
 
 @Component({
   selector: 'app-home-stores',
@@ -15,10 +17,12 @@ export class HomeStoresComponent implements OnInit {
 
   public isLoading: boolean;
   public stores: any;
+  public menuItem: MenuItem;
 
   constructor(private storeService: StoreService) {
     this.isLoading = true;
     this.currentRowNum = 0;
+    this.menuItem = null;
   }
 
   ngOnInit() {
@@ -27,11 +31,10 @@ export class HomeStoresComponent implements OnInit {
       response => {
         this.isLoading = response.isLoading;
         this.stores = response.stores;
-        console.log('STORES');
-        console.log(this.stores[0]);
+        this.menuItem = response.menuItem;
       },
       error => {
-        console.log('Observable error:');
+        console.log('Stores observable error:');
         console.log(error);
       },
       () => {}

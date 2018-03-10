@@ -21,11 +21,10 @@
            class="form-control"
            [placeholder]="('searchbox.input'| translate) + ('searchbox.' + menuItem.toString() | translate) + ('searchbox.category' | translate)"
            [(ngModel)]="menuItemCategory"
-           required
-           #spy
            (keyup.enter)="search()"
     />
     <span class="input-group-btn">
+      <button type="button" class="btn btn-default btn-reset" (click)="reset()" translate>searchbox.reset</button>
       <button class="btn btn-default" type="button" (click)="search()" translate>searchbox.go</button>
     </span>
   </div>

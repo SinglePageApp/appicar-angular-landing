@@ -29,7 +29,10 @@
       "description": "We offer you a range of amazing services that will revolutionize your experience as a customer:"
     },
     "stores": {
-      "title": "Our Stores"
+      "title": "Our Stores",
+      "results": "These are the stores that have",
+      "noResults": "There are no stores that have",
+      "menues": "in their menues"
     }
   },
   "about-page": {
@@ -49,7 +52,8 @@
     "input": "Input a ",
     "food": "food",
     "drink": "drink",
-    "category": " category..."
+    "category": " category...",
+    "reset": "Reset"
   },
   "loading-spinner": {
     "loading": "Loading..."

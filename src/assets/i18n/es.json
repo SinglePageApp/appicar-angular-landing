@@ -29,7 +29,10 @@
       "description": "Ofrecemos una gama de servicios increíbles que revolucionarán su experiencia como cliente:"
     },
     "stores": {
-      "title": "Locales Adheridos"
+      "title": "Locales Adheridos",
+      "results": "Estos son los locales que tienen",
+      "noResults": "¡No hay locales que tengan",
+      "menues": "en sus menús"
     }
   },
   "about-page": {
@@ -49,7 +52,8 @@
     "input": "Ingrese una categoría de ",
     "food": "comida",
     "drink": "bebida",
-    "category": "..."
+    "category": "...",
+    "reset": "Restablecer"
   },
   "loading-spinner": {
     "loading": "Cargando..."

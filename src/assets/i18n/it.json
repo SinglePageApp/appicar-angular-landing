@@ -29,7 +29,10 @@
       "description": "Ti offriamo una gamma di incredibili servizi che rivoluzioneranno la tua esperienza di cliente:"
     },
     "stores": {
-      "title": "I Nostri Negozi"
+      "title": "I Nostri Negozi",
+      "results": "Questi sono i negozi che hanno",
+      "noResults": "Non ci sono negozi che hanno",
+      "menues": "nei loro menu"
     }
   },
   "about-page": {
@@ -49,7 +52,8 @@
     "input": "Inserisci una categoria ",
     "food": "alimentare",
     "drink": "di bevande",
-    "category": "..."
+    "category": "...",
+    "reset": "Resettare"
   },
   "loading-spinner": {
     "loading": "Caricamento in corso..."
