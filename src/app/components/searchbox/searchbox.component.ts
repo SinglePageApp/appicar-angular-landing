@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { StoreService } from '../../services/store.service';
 import MenuItem from '../../models/MenuItem';
@@ -17,7 +18,6 @@ import Drink from '../../models/Drink';
  * Component for doing the search.
  */
 export class SearchboxComponent {
-
   public menuItem: MenuItem;
   public menuItemCategory: string;
 
@@ -26,7 +26,7 @@ export class SearchboxComponent {
    *
    * @param storeService StoreService dependency injection.
    */
-  constructor(private storeService: StoreService) {
+  constructor(private router: Router, private storeService: StoreService) {
     this.menuItem = new Food();
     this.menuItemCategory = '';
   }
@@ -48,10 +48,15 @@ export class SearchboxComponent {
    * Search stores by the menu item's category they have.
    */
   public search() {
+    const isSearchFrom404 = this.router.url === '/404';
     this.menuItem.setCategory(this.menuItemCategory);
-
+    // If the input isn't empty perform the search
     if (this.menuItemCategory) {
-      this.storeService.findStoresByMenuItem(this.menuItem);
+      this.storeService.findStoresByMenuItem(this.menuItem, isSearchFrom404);
+    }
+    // Redirect to HomePageComponent from Error404Component.
+    if (isSearchFrom404) {
+      this.router.navigateByUrl('/#stores');
     }
   }
 

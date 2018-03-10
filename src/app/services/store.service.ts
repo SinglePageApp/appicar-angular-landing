@@ -13,11 +13,29 @@ export class StoreService {
   private loading: boolean;
   private stores: any;
   private subject: Subject<any>;
+  private searchFrom404: boolean;
 
   constructor(private apollo: Apollo) {
     this.loading = true;
     this.stores = [];
     this.subject = new Subject<any>();
+    this.searchFrom404 = false;
+  }
+
+  /**
+   * Tells if a search from SearchboxComponent was perfomed from inside an Error404Component.
+   *
+   * @returns boolean true if the search was performed from inside an Error404Component.
+   */
+  public isSearchFrom404() {
+    return this.searchFrom404;
+  }
+
+  /**
+   * Resets the isSearchFrom404() method to its original state.
+   */
+  public resetSearchFrom404State() {
+    this.searchFrom404 = false;
   }
 
   /**
@@ -31,6 +49,7 @@ export class StoreService {
 
   /** GET stores from the server */
   public findStores(): any {
+    this.searchFrom404 = false;
     this.loading = true;
     this.menuItem = null;
 
@@ -78,7 +97,8 @@ export class StoreService {
    *
    * @param menuItem The menu's item used to do the search.
    */
-  findStoresByMenuItem(menuItem: MenuItem) {
+  findStoresByMenuItem(menuItem: MenuItem, searchFrom404?: boolean) {
+    this.searchFrom404 = searchFrom404 || false;
     this.loading = true;
     this.menuItem = menuItem;
 

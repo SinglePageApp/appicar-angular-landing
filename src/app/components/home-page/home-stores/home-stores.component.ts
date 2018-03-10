@@ -26,7 +26,6 @@ export class HomeStoresComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.storeService.findStores();
     this.storeService.getStores().subscribe(
       response => {
         this.isLoading = response.isLoading;
@@ -39,6 +38,10 @@ export class HomeStoresComponent implements OnInit {
       },
       () => {}
     );
+    // If a search was performed from inside an Error404Component don't find the stores.}}
+    if (!this.storeService.isSearchFrom404()) {
+      this.storeService.findStores();
+    }
   }
 
   isRowOdd(i: number) {

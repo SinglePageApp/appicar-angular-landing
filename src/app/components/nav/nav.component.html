@@ -8,7 +8,7 @@
           <a routerLink="/" routerLinkActive="active" translate>nav.home</a>
         </li>
         <li>
-          <a routerLink="/about" routerLinkActive="active" translate>nav.about</a>
+          <a routerLink="/about" routerLinkActive="active" (click)="onAboutLinkClick()" translate>nav.about</a>
         </li>
         <li>
           <a routerLink="/" fragment="stores" (click)="onNavLinkClick()" translate>nav.stores</a>
