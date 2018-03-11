@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { StoreService } from '../../../services/store.service';
+import Store from '../../../models/Store';
+import MenuItem from '../../../models/MenuItem';
+
 
 @Component({
   selector: 'app-home-stores',
@@ -9,20 +13,35 @@ import { StoreService } from '../../../services/store.service';
 })
 export class HomeStoresComponent implements OnInit {
 
-  currentRowNum: number;
-  isLoading: boolean;
-  stores: any;
+  private currentRowNum: number;
+
+  public isLoading: boolean;
+  public stores: any;
+  public menuItem: MenuItem;
 
   constructor(private storeService: StoreService) {
     this.isLoading = true;
     this.currentRowNum = 0;
+    this.menuItem = null;
   }
 
   ngOnInit() {
-    this.storeService.getStores().subscribe(({ data, loading }) => {
-      this.isLoading = false;
-      this.stores = data.stores;
-    });
+    this.storeService.getStores().subscribe(
+      response => {
+        this.isLoading = response.isLoading;
+        this.stores = response.stores;
+        this.menuItem = response.menuItem;
+      },
+      error => {
+        console.log('Stores observable error:');
+        console.log(error);
+      },
+      () => {}
+    );
+    // If a search was performed from inside an Error404Component don't find the stores.}}
+    if (!this.storeService.isSearchFrom404()) {
+      this.storeService.findStores();
+    }
   }
 
   isRowOdd(i: number) {
