@@ -39,6 +39,62 @@ export class StoreService {
   }
 
   /**
+   * Gets an observable of the store retrieve from the API server.
+   *
+   * @param URI The stores URI parameter.
+   */
+  public getStore(URI: string): RxObservable<any> {
+    const query = gql`
+      {
+        store (URI: "${URI}") {
+          name
+          description {
+            en
+            es
+            it
+          }
+          category
+          address
+          city
+          country
+          lat
+          lng
+          image
+          menu {
+            items {
+              food {
+                name {
+                  en
+                  es
+                  it
+                }
+                picture
+                price {
+                  currency
+                  value
+                }
+              }
+              drink {
+                name {
+                  en
+                  es
+                  it
+                }
+                picture
+                price {
+                  currency
+                  value
+                }
+              }
+            }
+          }
+        }
+      }
+    `;
+
+    return this.apollo.watchQuery<any>({query: query}).valueChanges;
+  }
+  /**
    * Gets observable stores.
    *
    * @returns rxjs/Observable<any> An observable reference of stores.
@@ -56,8 +112,9 @@ export class StoreService {
     const query = gql`
       {
         stores {
+          URI
           name
-          description
+          category
           address
           city
           image
@@ -80,8 +137,9 @@ export class StoreService {
     const query = gql`
       {
         featuredStores {
+          URI
           name
-          description
+          category
           address
           city
           image
@@ -105,8 +163,9 @@ export class StoreService {
     const query = gql`
       {
         stores (menuItemType: "${menuItem.toString()}", menuItemCategory: "${menuItem.getCategory()}") {
+          URI
           name
-          description
+          category
           address
           city
           image

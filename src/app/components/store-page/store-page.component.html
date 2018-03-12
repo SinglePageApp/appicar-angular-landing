@@ -7,7 +7,7 @@
     <div class="container">
       <div class="blog-top-left-grid">
         <div class="categories">
-          <img src="http://cdn.appicar.com/stores/5kPxqXmRw6yyjfRLb.jpg" alt="Antares">
+          <img src="{{ store.getImage() }}" alt="{{ store.getName() }}">
         </div>
         <div class="categories info">
           <h3>Information:</h3>
@@ -29,7 +29,7 @@
             <section>
               <h5>Category:</h5>
               <ul>
-                <li>Bar</li>
+                <li translate>{{ store.getCategory }}</li>
               </ul>
             </section>
             <section>
@@ -64,13 +64,7 @@
             </div>
             <div class="blog-left-bottom">
               <p>
-                Antares is an Argentine brewery that produces craft beers in the city of Mar del Plata since 1998. It is made in seven varieties,
-                following European recipes, not only found in the Argentine market, but it is already marketed in Brazil,
-                Canada, United States, Uruguay and Sweden, exports involve a little more than 20,000 bottles per year. Some
-                of the varieties are aged in oak vases for a month, achieving unique flavors and an alcoholic strength of
-                8%. Locations have been installed in different Argentine provinces and in Buenos Aires, where you can taste
-                some appetizers, dishes of German food and the seven varieties of beer they make. The production is 50,000
-                liters of beer per month. We assign tables by arrival. Antares bottle loading every day from 18 a 21 hs.
+                {{ description }}
               </p>
             </div>
           </div>
@@ -82,9 +76,7 @@
               <h3>Location:</h3>
             </div>
             <div class="blog-left-bottom">
-              <iframe src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDqpxYbmMQKzjaVZNlvgReQ-Yq7m24Vkds&q=-32.8928442,-68.8519457&language=en"
-                allowfullscreen="">
-              </iframe>
+              <iframe [src]="mapsURL" allowfullscreen=""></iframe>
             </div>
           </div>
           <!-- //Map -->
