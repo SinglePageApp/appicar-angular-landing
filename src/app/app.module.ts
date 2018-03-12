@@ -35,6 +35,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { StorePageComponent } from './components/store-page/store-page.component';
 import { StoreMenuComponent } from './components/store-page/store-menu/store-menu.component';
 import { StoreConcernsComponent } from './components/store-page/store-concerns/store-concerns.component';
+import { StoreReviewsComponent } from './components/store-page/store-reviews/store-reviews.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -71,7 +72,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     LogoComponent,
     StorePageComponent,
     StoreMenuComponent,
-    StoreConcernsComponent
+    StoreConcernsComponent,
+    StoreReviewsComponent
   ],
   imports: [
     BrowserModule,

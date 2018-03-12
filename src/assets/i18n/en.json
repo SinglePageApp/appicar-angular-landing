@@ -32,7 +32,11 @@
       "title": "Our Stores",
       "results": "These are the stores that have",
       "noResults": "There are no stores that have",
-      "menues": "in their menues"
+      "menues": "in their",
+      "menuesResults": " menues:",
+      "menuesNoResults": " menues!",
+      "food": "food",
+      "drink": "drinks"
     }
   },
   "about-page": {
