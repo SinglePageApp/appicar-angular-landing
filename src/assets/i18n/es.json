@@ -32,7 +32,11 @@
       "title": "Locales Adheridos",
       "results": "Estos son los locales que tienen",
       "noResults": "¡No hay locales que tengan",
-      "menues": "en sus menús"
+      "menues": "en sus menús de",
+      "menuesResults": ":",
+      "menuesNoResults": "!",
+      "food": "comida",
+      "drink": "bebida"
     }
   },
   "about-page": {

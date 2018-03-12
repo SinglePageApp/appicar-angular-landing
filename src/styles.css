@@ -15,6 +15,10 @@ body a {
   -o-transition: 0.5s all;
   -moz-transition: 0.5s all;
   -ms-transition: 0.5s all;
+  text-decoration: none !important;
+}
+body a:hover {
+  text-decoration: none !important;
 }
 .special-heading h3,
 .features h3,
@@ -26,11 +30,21 @@ body a {
   text-align: center;
   font-family: "Francois One", sans-serif;
 }
+.label {
+  font-weight: 300 !important;
+  border-radius: 4px;
+  font-size: 1.5em !important;
+  padding: 0.5em 1em 0.5em 1em !important;
+}
+.label-primary:hover {
+  background-color: #296192 !important;
+}
 /*--Shortcodes--*/
 .about-heading h2,
 .offers-heading h3,
 .team-heading h3,
 .contact-heading h2,
+.menu-heading h2,
 .contact-form h3 {
   color: #fd5c63;
   font-size: 3em;
@@ -222,6 +236,7 @@ h2.typoh2 {
     font-size: 2em;
   }
   .codes-heading h2,
+  .menu-heading h2,
   .about-heading h2,
   .offers-heading h3,
   .team-heading h3,

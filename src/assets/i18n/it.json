@@ -32,7 +32,11 @@
       "title": "I Nostri Negozi",
       "results": "Questi sono i negozi che hanno",
       "noResults": "Non ci sono negozi che hanno",
-      "menues": "nei loro menu"
+      "menues": "nei loro menu",
+      "menuesResults": ":",
+      "menuesNoResults": "!",
+      "food": "alimentare",
+      "drink": "di bevande"
     }
   },
   "about-page": {
