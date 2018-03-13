@@ -24,21 +24,8 @@ export default class Drink extends MenuItem {
     picture?: string,
     price?: Price[]
   ) {
-    super();
-    this.date = new Date();
-    this.name = name;
-    this.category = category;
-    this.paymentMethods = paymentMethods;
-    this.picture = picture;
-    this.price = price;
-  }
-
-  public getName(language: string): string {
-    return this.name.getText(language);
-  }
-
-  public getPrice(currency: string): number {
-    return this.price.find(i => i.getCurrency() === currency).getValue();
+    super(name, paymentMethods, picture, price);
+    this.category = category || '';
   }
 
   public getAction(): string {

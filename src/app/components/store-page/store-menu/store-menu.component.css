@@ -9,8 +9,9 @@
 .agile-menu-grid {
   position: relative;
   overflow: hidden;
+  cursor: help;
 }
-.agile-menu-grid a img {
+.agile-menu-grid img {
   width: 100%;
   height: 169px;
 }

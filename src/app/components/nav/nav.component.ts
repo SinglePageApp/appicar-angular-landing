@@ -58,10 +58,12 @@ export class NavComponent implements OnInit, AfterViewChecked {
    * Navigates to the fragment element specified in the URL's hashtag (#).
    */
   private navigateToHash() {
-    try {
-      document.querySelector('#' + this.fragment).scrollIntoView();
-    } catch (e) {
-      console.log('Error scrolling to #' + this.fragment);
+    if (this.fragment) {
+      try {
+        document.querySelector('#' + this.fragment).scrollIntoView();
+      } catch (e) {
+        console.log('Error scrolling to #' + this.fragment);
+      }
     }
   }
 }

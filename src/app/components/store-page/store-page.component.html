@@ -29,19 +29,19 @@
             <section>
               <h5>Category:</h5>
               <ul>
-                <li translate>{{ store.getCategory }}</li>
+                <li translate>{{ store.getCategory() }}</li>
               </ul>
             </section>
             <section>
               <h5>Address:</h5>
               <ul>
-                <li>Av. Arístides Villanueva 263</li>
+                <li>{{ store.getAddress() }}</li>
               </ul>
             </section>
             <section>
               <h5>Location:</h5>
               <ul>
-                <li>Mendoza, Argentina</li>
+                <li>{{ store.getLocation() }}</li>
               </ul>
             </section>
           </article>
@@ -64,7 +64,7 @@
             </div>
             <div class="blog-left-bottom">
               <p>
-                {{ description }}
+                {{ store.getDescription(language) }}
               </p>
             </div>
           </div>
@@ -91,7 +91,7 @@
   </div>
   <!-- //single -->
 
-  <app-store-menu></app-store-menu>
+  <app-store-menu *ngIf="store.getMenu()" [menu]="store.getMenu()"></app-store-menu>
 
   <app-store-concerns></app-store-concerns>
 </div>

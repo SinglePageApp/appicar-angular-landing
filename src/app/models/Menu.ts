@@ -1,4 +1,9 @@
 import Item from './Item';
+import Food from './Food';
+import Translatable from './Translatable';
+import Price from './Price';
+import Drink from './Drink';
+import MenuItem from './MenuItem';
 
 /**
  * class :: Menu
@@ -8,6 +13,10 @@ import Item from './Item';
 export default class Menu {
 
   private items: Item[];
+
+  public constructor() {
+    this.items = new Array<Item>();
+  }
 
   /**
    * Gets all the items and promotions in the menu.
@@ -25,5 +34,31 @@ export default class Menu {
    */
   public add(item: Item) {
     this.items.push(item);
+  }
+
+  public addJsonItems(items: any) {
+    for (const key in items) {
+      if (key === 'food' && items.food) {
+        let food: Food;
+        items.food.forEach(foodJson => {
+          food = Object.assign(new Food(), foodJson);
+          food.setName(Object.assign(new Translatable(''), foodJson.name));
+          food.setJsonPrice(foodJson.price);
+          this.add(food);
+        });
+      } else if (key === 'drink' && items.drink) {
+        let drink: Drink;
+        items.drink.forEach(drinkJson => {
+          drink = Object.assign(new Drink(), drinkJson);
+          drink.setName(Object.assign(new Translatable(''), drinkJson.name));
+          drink.setJsonPrice(drinkJson.price);
+          this.add(drink);
+        });
+      }
+    }
+  }
+
+  public addItems(items: Item[]) {
+    Array.prototype.push.apply(this.items, items);
   }
 }

@@ -68,6 +68,8 @@ export class StoreService {
                   es
                   it
                 }
+                category
+                paymentMethods
                 picture
                 price {
                   currency
@@ -80,6 +82,8 @@ export class StoreService {
                   es
                   it
                 }
+                category
+                paymentMethods
                 picture
                 price {
                   currency

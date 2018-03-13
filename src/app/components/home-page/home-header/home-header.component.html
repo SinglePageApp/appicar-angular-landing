@@ -19,7 +19,9 @@
 
         <div class="col-md-4 banner-grad" *ngFor="let store of featuredStores">
           <div class="banner-grad-img">
-            <img src="{{ store.image }}" alt="{{ store.name }}" />
+            <a routerLink="/store/{{ store.URI }}">
+              <img src="{{ store.image }}" alt="{{ store.name }}" />
+            </a>
             <h4>{{ store.name }}</h4>
             <p>
               <span class="storeDescription">{{ store.category }}</span>

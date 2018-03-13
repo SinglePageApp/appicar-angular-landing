@@ -58,8 +58,8 @@ export default class Store {
     this.category = value;
   }
 
-  public getDescription(language: string): Translatable {
-    return this.description[language];
+  public getDescription(language: string): string {
+    return this.description.getText(language);
   }
 
   public setDescription(value: Translatable) {
@@ -116,6 +116,10 @@ export default class Store {
 
   public setCountry(value: string) {
     this.country = value;
+  }
+
+  public getLocation(): string {
+    return this.city + ', ' + this.country;
   }
 
   public getImage(): string {
