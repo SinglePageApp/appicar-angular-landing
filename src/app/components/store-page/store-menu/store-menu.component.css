@@ -17,7 +17,7 @@
 }
 .agileits-caption {
   background: rgba(0, 0, 0, 0.62);
-  padding: 1.2em 1em 1em 1em;
+  padding: 0.3em 1em 1em 1em;
   position: absolute;
   left: 0;
   bottom: -65%;
@@ -36,6 +36,10 @@
   font-family: "Francois One", sans-serif;
   font-size: 1.7em;
   margin: 0;
+  width: 227px;
+  height: 52px;
+  text-align: center;
+  display: inline-block;
 }
 .agileits-caption p {
   color: #ffffff;
