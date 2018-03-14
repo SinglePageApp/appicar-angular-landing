@@ -92,6 +92,18 @@ export class StoreService {
               }
             }
           }
+          reviews {
+            clientId
+            clientName
+            clientPicture
+            date
+            points
+            text {
+              en
+              es
+              it
+            }
+          }
         }
       }
     `;

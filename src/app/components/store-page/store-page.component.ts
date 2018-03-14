@@ -7,6 +7,7 @@ import { StoreService } from '../../services/store.service';
 import Store from '../../models/Store';
 import Translatable from '../../models/Translatable';
 import Menu from '../../models/Menu';
+import Review from '../../models/Review';
 
 @Component({
   selector: 'app-store-page',
@@ -32,34 +33,38 @@ export class StorePageComponent implements OnInit, OnDestroy {
    * @param storeService The injected StoreService instance.
    */
   constructor(
+    private translate: TranslateService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    public translate: TranslateService,
     private storeService: StoreService
   ) {
-    this.store = new Store();
+    // Initial language assign.
+    this.language = translate.currentLang;
+    // Subscribe to on language change event to set the new current language.
+    this.translate.onLangChange.subscribe((data) => {
+      this.language = data.lang;
+    });
   }
 
   ngOnInit() {
     // Scroll to top.
     window.scrollTo(0, 0);
-
-    this.translate.onLangChange.subscribe((data) => {
-      this.language = data.lang;
-    });
-
     // Get route's parameters.
     this.sub = this.route.params.subscribe(params => {
       this.uri = params['uri'];
 
       this.storeService.getStore(this.uri).subscribe(({ data }) => {
-        this.store = <Store> Object.assign(this.store, data.store);
+        this.store = <Store> Object.assign(new Store(), data.store);
         this.store.setDescription(Object.assign(new Translatable(''), data.store.description));
         // If the store has a menu, load it.
         if (data.store.menu) {
           const menu = new Menu();
-          menu.addJsonItems(data.store.menu.items);
+          menu.setJsonItems(data.store.menu.items);
           this.store.setMenu(menu);
+        }
+        // If the store has reviews, load them.
+        if (data.store.reviews) {
+          this.store.setJsonReviews(data.store.reviews);
         }
         // Google Map's URL sanitization.
         this.mapsURL = this.sanitizer.bypassSecurityTrustResourceUrl(

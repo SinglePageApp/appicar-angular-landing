@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { DatePipe } from '@angular/common';
+
+import Review from '../../../models/Review';
+
 
 @Component({
   selector: 'app-store-reviews',
@@ -6,10 +11,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./store-reviews.component.css']
 })
 export class StoreReviewsComponent implements OnInit {
+  // Component's tag property review (array of reviews).
+  @Input() reviews: Review[];
+  // Component's tag property with the value of the current language
+  @Input() lang: string;
+  /**
+   * Constructor.
+   *
+   * @param translate The injected TranslateService instance.
+   */
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

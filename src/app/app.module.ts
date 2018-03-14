@@ -34,7 +34,6 @@ import { FlagsComponent } from './components/nav/flags/flags.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { StorePageComponent } from './components/store-page/store-page.component';
 import { StoreMenuComponent } from './components/store-page/store-menu/store-menu.component';
-import { StoreConcernsComponent } from './components/store-page/store-concerns/store-concerns.component';
 import { StoreReviewsComponent } from './components/store-page/store-reviews/store-reviews.component';
 
 const appRoutes: Routes = [
@@ -72,7 +71,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     LogoComponent,
     StorePageComponent,
     StoreMenuComponent,
-    StoreConcernsComponent,
     StoreReviewsComponent
   ],
   imports: [

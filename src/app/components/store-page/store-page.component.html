@@ -81,7 +81,8 @@
           </div>
           <!-- //Map -->
 
-          <app-store-reviews></app-store-reviews>
+          <app-store-reviews *ngIf="store.getReviews()" [reviews]="store.getReviews()" [lang]="language">
+          </app-store-reviews>
 
         </div>
       </div>
@@ -92,6 +93,4 @@
   <!-- //single -->
 
   <app-store-menu *ngIf="store.getMenu()" [menu]="store.getMenu()"></app-store-menu>
-
-  <app-store-concerns></app-store-concerns>
 </div>

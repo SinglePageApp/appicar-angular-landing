@@ -36,7 +36,15 @@ export default class Menu {
     this.items.push(item);
   }
 
-  public addJsonItems(items: any) {
+  /**
+   * Sets all the items and promotions in the menu from a JSON object.
+   *
+   * @param reviews A JSON object containing the items and promotions in the menu.
+   */
+  public setJsonItems(items: any) {
+    // Clear property before start pushing items into it.
+    this.items = [];
+    // Loop over all individual items in JSON format.
     for (const key in items) {
       if (key === 'food' && items.food) {
         let food: Food;
