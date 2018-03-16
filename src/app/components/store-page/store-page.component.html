@@ -7,39 +7,36 @@
     <div class="container">
       <div class="blog-top-left-grid">
         <div class="categories">
-          <img src="{{ store.getImage() }}" alt="{{ store.getName() }}">
+          <img src="{{ store.getImage() }}" alt="{{ store.getName() }}" />
         </div>
         <div class="categories info">
-          <h3>Information:</h3>
+          <h3 translate>store-page.information</h3>
           <article>
             <section>
-              <h5>Rating:</h5>
+              <h5 translate>store-page.rating</h5>
               <ul>
                 <li>
-                  <div class="rating">
-                    <i class="fa fa-star active"></i>
-                    <i class="fa fa-star active"></i>
-                    <i class="fa fa-star active"></i>
-                    <i class="fa fa-star active"></i>
-                    <i class="fa fa-star"></i>
+                  <div class="rating" *ngIf="store.getStars()">
+                    <i class="fa fa-star active" *ngFor="let star of store.getStars()">&nbsp;
+                    </i><i class="fa fa-star" *ngFor="let star of store.getLackingStars()"></i>
                   </div>
                 </li>
               </ul>
             </section>
             <section>
-              <h5>Category:</h5>
+              <h5 translate>store-page.category</h5>
               <ul>
                 <li translate>{{ store.getCategory() }}</li>
               </ul>
             </section>
             <section>
-              <h5>Address:</h5>
+              <h5 translate>store-page.address</h5>
               <ul>
                 <li>{{ store.getAddress() }}</li>
               </ul>
             </section>
             <section>
-              <h5>Location:</h5>
+              <h5 translate>store-page.location</h5>
               <ul>
                 <li>{{ store.getLocation() }}</li>
               </ul>
@@ -47,10 +44,10 @@
           </article>
         </div>
         <div class="categories">
-          <h3>Reservations:</h3>
+          <h3 translate>store-page.reservations</h3>
           <span class="btn-reserve-container">
             <a href="#">
-              <span class="label label-primary">Reserve</span>
+              <span class="label label-primary" translate>store-page.reserve</span>
             </a>
           </span>
         </div>
@@ -60,7 +57,7 @@
           <!-- Description -->
           <div class="blog-left">
             <div class="single-left-left">
-              <h3>Description:</h3>
+              <h3 translate>store-page.description</h3>
             </div>
             <div class="blog-left-bottom">
               <p>
@@ -73,7 +70,7 @@
           <!-- Map -->
           <div class="map">
             <div class="single-left-left">
-              <h3>Location:</h3>
+              <h3 translate>store-page.location</h3>
             </div>
             <div class="blog-left-bottom">
               <iframe [src]="mapsURL" allowfullscreen=""></iframe>
@@ -81,7 +78,7 @@
           </div>
           <!-- //Map -->
 
-          <app-store-reviews *ngIf="store.getReviews()" [reviews]="store.getReviews()" [lang]="language">
+          <app-store-reviews *ngIf="store.hasReviews()" [reviews]="store.getReviews()" [language]="language">
           </app-store-reviews>
 
         </div>
@@ -92,5 +89,5 @@
   </div>
   <!-- //single -->
 
-  <app-store-menu *ngIf="store.getMenu()" [menu]="store.getMenu()"></app-store-menu>
+  <app-store-menu *ngIf="store.hasMenu()" [menu]="store.getMenu()"></app-store-menu>
 </div>

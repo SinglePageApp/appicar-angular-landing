@@ -18,19 +18,15 @@
   width: 13%;
   float: left;
 }
-.media-left.response-text-left a img {
+.media-left.response-text-left img {
   width: 80%;
 }
-.media-left.response-text-left h5 a {
+.media-left.response-text-left h5 {
   color: #bbbbbb;
-}
-.media-left.response-text-left h5 a:hover {
-  color: #3b3b3b;
-  text-decoration: none;
+  font-weight: 600;
 }
 .response-text-left h5 {
   font-size: 1em;
-  margin: 1em 0 0 0;
 }
 .response-text-right p {
   color: #383838;

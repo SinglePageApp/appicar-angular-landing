@@ -53,6 +53,7 @@ export class StoreService {
             es
             it
           }
+          points
           category
           address
           city

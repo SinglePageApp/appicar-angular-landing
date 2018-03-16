@@ -14,7 +14,7 @@ export class StoreReviewsComponent implements OnInit {
   // Component's tag property review (array of reviews).
   @Input() reviews: Review[];
   // Component's tag property with the value of the current language
-  @Input() lang: string;
+  @Input() language: string;
   /**
    * Constructor.
    *

@@ -1,25 +1,19 @@
 import Translatable from './Translatable';
 import TranslatableText from './TranslatableText';
-
-/** Maximum number of points constant. */
-const MAX_POINTS = 5;
+import Scorable from './Scorable';
 
 /**
  * class :: Review
  *
  * Represents a client's review about a store.
  */
-export default class Review extends TranslatableText {
+export default class Review extends Scorable {
   /** The reviewer's id. */
   private clientId: string;
   /** The reviewer's name. */
   private clientName: string;
   /** The reviewer's CDN URL of his picture. */
   private clientPicture: string;
-  /** The date when the review was performed. */
-  private date: Date;
-  /** The review's number of points (from 0 to 5). */
-  private points: number;
 
   /**
    * Constructor.
@@ -34,10 +28,10 @@ export default class Review extends TranslatableText {
     clientId?: string,
     clientName?: string,
     clientPicture?: string,
-    text?: Translatable,
+    description?: Translatable,
     points?: number
   ) {
-    super(text || null);
+    super(description || null);
     this.date = new Date();
     this.clientId = clientId || null;
     this.clientName = clientName || null;
@@ -54,8 +48,13 @@ export default class Review extends TranslatableText {
     return this.clientId;
   }
 
-  public setClientId(value: string) {
-    this.clientId = value;
+  /**
+   * Sets the reviewer's ID.
+   *
+   * @param id The reviewer's ID.
+   */
+  public setClientId(id: string) {
+    this.clientId = id;
   }
 
   /**
@@ -67,8 +66,13 @@ export default class Review extends TranslatableText {
     return this.clientName;
   }
 
-  public setClientName(value: string) {
-    this.clientName = value;
+  /**
+   * Sets the reviewer's name.
+   *
+   * @param name The reviewer's name.
+   */
+  public setClientName(name: string) {
+    this.clientName = name;
   }
 
   /**
@@ -80,65 +84,12 @@ export default class Review extends TranslatableText {
     return this.clientPicture;
   }
 
-  public setClientPicture(value: string) {
-    this.clientPicture = value;
-  }
-
   /**
-   * Gets the date when the review was performed.
+   * Sets the reviewer's CDN URL of his picture.
    *
-   * @returns Date The date when the review was performed.
+   * @param picture An string containing the reviewer's CDN URL of his picture.
    */
-  public getDate(): Date {
-    return this.date;
-  }
-
-  /**
-   * Gets the review's number of points (from 0 to 5).
-   *
-   * @returns number The review's number of points (from 0 to 5).
-   */
-  public getPoints(): number {
-    return this.points;
-  }
-
-  /**
-   * Sets the review's number of points (from 0 to 5).
-   *
-   * @param value The review's number of points (an integer from 0 to 5).
-   */
-  public setPoints(value: number) {
-    // Points must be in the range 0-5.
-    if (value >= 0 && value < 6) {
-      this.points = value;
-    } else {
-      // tslint:disable-next-line:quotemark
-      throw new OutOfRangeError("Review's points must be an integer between 0 and 5.");
-    }
-  }
-
-  /**
-   * Gets an array of length equals to number of points.
-   *
-   * @returns any An array of number of points length.
-   */
-  public getStars(): Array<number> {
-    return new Array(this.points);
-  }
-
-  /**
-   * Gets an array of length equals to number of lacking points to max puntuation.
-   *
-   * @returns any An array of number of points length.
-   */
-  public getLackingStars(): Array<number> {
-    return new Array(MAX_POINTS - this.points);
+  public setClientPicture(picture: string) {
+    this.clientPicture = picture;
   }
 }
-
-/**
- * class :: OutOfRangeError
- *
- * Represents and error caused by an integer that it's out of the specified range.
- */
-class OutOfRangeError extends Error {}

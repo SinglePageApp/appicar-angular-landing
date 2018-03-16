@@ -9,6 +9,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { registerLocaleData } from '@angular/common';
+import localeES from '@angular/common/locales/es';
+import localeIT from '@angular/common/locales/it';
 
 import { StoreService } from './services/store.service';
 
@@ -47,6 +50,9 @@ const appRoutes: Routes = [
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
+registerLocaleData(localeES);
+registerLocaleData(localeIT);
 
 @NgModule({
   declarations: [

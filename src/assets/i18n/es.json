@@ -1,4 +1,9 @@
 {
+  "DB": {
+    "restaurant": "Restaurante",
+    "bar": "Bar",
+    "bar-restaurant": "Bar / Restaurante"
+  },
   "nav": {
     "home" : "Inicio",
     "about" : "Quiénes Somos",
@@ -47,6 +52,18 @@
       "eng": "Ing.",
       "member1": "CTO de Appicar. Ingeniero en Informática y Desarrollador Full-Stack. Creador principal del sitio web de Appicar, la aplicación web y la aplicación móvil."
     }
+  },
+  "store-page": {
+    "description": "Descripción:",
+    "information": "Información:",
+    "rating": "Calificación:",
+    "category": "Categoría",
+    "address": "Dirección:",
+    "location": "Ubicación:",
+    "reservations": "Reservaciones:",
+    "reserve": "Reservar",
+    "reviews": "Reseñas:",
+    "menu": "Nuestro Menú"
   },
   "searchbox": {
     "iWant" : "Hoy, quiero",

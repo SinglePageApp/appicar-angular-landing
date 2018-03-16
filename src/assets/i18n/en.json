@@ -1,4 +1,9 @@
 {
+  "DB": {
+    "restaurant": "Restaurant",
+    "bar": "Bar",
+    "bar-restaurant": "Bar / Restaurant"
+  },
   "nav": {
     "home" : "Home",
     "about" : "About",
@@ -47,6 +52,18 @@
       "eng": "Eng.",
       "member1": "Appicar's CTO. I.T. Engineer and Full-Stack Developer. Main creator of Appicar's website, web app and mobile app."
     }
+  },
+  "store-page": {
+    "description": "Description:",
+    "information": "Information:",
+    "rating": "Rating:",
+    "category": "Category",
+    "address": "Address:",
+    "location": "Location:",
+    "reservations": "Reservations:",
+    "reserve": "Reserve",
+    "reviews": "Reviews:",
+    "menu": "Our Menu"
   },
   "searchbox": {
     "iWant" : "Today, I want to",

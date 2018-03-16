@@ -1,23 +1,20 @@
 import Translatable from './Translatable';
 import Menu from './Menu';
 import Review from './Review';
+import Scorable from './Scorable';
 
 /**
  * class :: Store
  *
  * Represents a commercial store.
  */
-export default class Store {
+export default class Store extends Scorable {
   /** The store's URI parameter of the URL. */
   private URI: string;
   /** The store's name. */
   private name: string;
-  /** The store's creation date. */
-  private date: Date;
   /** The store's category, i.e: 'Bar', 'Restaurant', 'Bar / Restaurant', etc. */
   private category: string;
-  /** The store's description. Informative text about the specifics of the store. */
-  private description: Translatable;
   /** The store's physical address. */
   private address: string;
   /** The city where the store is located. */
@@ -36,6 +33,16 @@ export default class Store {
   private menu: Menu;
   /** The clients reviews about the store. */
   private reviews: Review[];
+
+  /**
+   * Constructor.
+   */
+  public constructor(description?: Translatable) {
+    super(description || new Translatable(''));
+    this.date = new Date();
+    this.menu = null;
+    this.reviews = [];
+  }
 
   public getURI(): string {
     return this.URI;
@@ -59,14 +66,6 @@ export default class Store {
 
   public setCategory(value: string) {
     this.category = value;
-  }
-
-  public getDescription(language: string): string {
-    return this.description[language];
-  }
-
-  public setDescription(value: Translatable) {
-    this.description = value;
   }
 
   public getAddress(): string {
@@ -133,6 +132,15 @@ export default class Store {
     this.image = value;
   }
 
+  /**
+   * Checks if the store has a menu loaded.
+   *
+   * @returns boolean Is true if the store has a menu loaded.
+   */
+  public hasMenu(): boolean {
+    return this.menu != null;
+  }
+
   public getMenu(): Menu {
     return this.menu;
   }
@@ -160,6 +168,15 @@ export default class Store {
   }
 
   /**
+   * Checks if a store has reviews loaded.
+   *
+   * @returns boolean Is true if the store has at least 1 review loaded.
+   */
+  public hasReviews() {
+    return this.reviews.length > 0;
+  }
+
+  /**
    * Adds an individual review about the store.
    *
    * @param review The client review about the store.
@@ -180,7 +197,7 @@ export default class Store {
     // Loop over all individual reviews in JSON format.
     reviews.forEach(reviewJson => {
       review = Object.assign(new Review(), reviewJson);
-      review.setText(Object.assign(new Translatable(''), reviewJson.text));
+      review.setDescription(Object.assign(new Translatable(''), reviewJson.text));
       this.addReview(review);
     });
   }

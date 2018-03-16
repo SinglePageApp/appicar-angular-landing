@@ -38,6 +38,7 @@ export class StorePageComponent implements OnInit, OnDestroy {
     private sanitizer: DomSanitizer,
     private storeService: StoreService
   ) {
+    this.store = new Store();
     // Initial language assign.
     this.language = translate.currentLang;
     // Subscribe to on language change event to set the new current language.
@@ -52,9 +53,9 @@ export class StorePageComponent implements OnInit, OnDestroy {
     // Get route's parameters.
     this.sub = this.route.params.subscribe(params => {
       this.uri = params['uri'];
-
+      // Subscribes to change of store.
       this.storeService.getStore(this.uri).subscribe(({ data }) => {
-        this.store = <Store> Object.assign(new Store(), data.store);
+        this.store = <Store> Object.assign(this.store, data.store);
         this.store.setDescription(Object.assign(new Translatable(''), data.store.description));
         // If the store has a menu, load it.
         if (data.store.menu) {
