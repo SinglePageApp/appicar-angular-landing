@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApolloModule, Apollo } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
@@ -14,6 +14,7 @@ import localeES from '@angular/common/locales/es';
 import localeIT from '@angular/common/locales/it';
 
 import { StoreService } from './services/store.service';
+import { MailService } from './services/mail.service';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -38,6 +39,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { StorePageComponent } from './components/store-page/store-page.component';
 import { StoreMenuComponent } from './components/store-page/store-menu/store-menu.component';
 import { StoreReviewsComponent } from './components/store-page/store-reviews/store-reviews.component';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
@@ -82,6 +84,7 @@ registerLocaleData(localeIT);
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFontAwesomeModule,
     RouterModule.forRoot(appRoutes, { enableTracing: false }),
     HttpClientModule,
@@ -95,7 +98,7 @@ registerLocaleData(localeIT);
       }
     })
   ],
-  providers: [StoreService],
+  providers: [StoreService, MailService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

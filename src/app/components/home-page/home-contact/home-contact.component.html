@@ -4,12 +4,12 @@
       <h2 translate>home-page.contact.contact</h2>
     </div>
     <div class="contact-form">
-      <form action="#" method="post">
-        <input type="text" name="Name" placeholder="{{'home-page.contact.name' | translate}}" required="" />
-        <input type="text" name="Email" placeholder="{{'home-page.contact.email' | translate}}" required="" />
-        <input type="text" name="Subject" placeholder="{{'home-page.contact.subject' | translate}}" required="" />
-        <textarea name="Message" placeholder="{{'home-page.contact.message' | translate}}" required=""></textarea>
-        <input type="submit" value="{{'home-page.contact.send' | translate}}" />
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <input type="text" name="Name" placeholder="{{'home-page.contact.name' | translate}}" formControlName="name" />
+        <input type="text" name="Email" placeholder="{{'home-page.contact.email' | translate}}" formControlName="email" />
+        <input type="text" name="Subject" placeholder="{{'home-page.contact.subject' | translate}}" formControlName="subject" />
+        <textarea name="Message" placeholder="{{'home-page.contact.message' | translate}}" formControlName="message"></textarea>
+        <input type="submit" value="{{'home-page.contact.send' | translate}}" [disabled]="form.invalid" />
       </form>
     </div>
   </div>
