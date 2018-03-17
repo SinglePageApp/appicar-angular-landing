@@ -24,7 +24,17 @@
       "email": "Correo",
       "subject": "Asunto",
       "message": "Mensaje",
-      "send": "ENVIAR"
+      "send": "ENVIAR",
+      "success": {
+        "title": "¡Mensaje enviado!",
+        "description": "Nuestro equipo te responderá lo antes posible ¡Gracias por el interés!"
+      },
+      "error": {
+        "title": "¡El mensaje no ha sido enviado!",
+        "description": "Ha ocurrido un error interno. Por favor, contacte a",
+        "subject": "¡El mensaje del formulario de contacto no ha sido enviado!",
+        "body": "Hola, recibí este error al intentar enviar un mensaje desde el formulario de contacto:%0A%0A«¡El mensaje no ha sido enviado! Ha ocurrido un error interno.»%0A%0A¡Saludos!"
+      }
     },
     "reviews": {
       "title": "¿Qué dicen nuestros clientes?"

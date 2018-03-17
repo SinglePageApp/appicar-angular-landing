@@ -9,6 +9,20 @@
         <input type="text" name="Email" placeholder="{{'home-page.contact.email' | translate}}" formControlName="email" />
         <input type="text" name="Subject" placeholder="{{'home-page.contact.subject' | translate}}" formControlName="subject" />
         <textarea name="Message" placeholder="{{'home-page.contact.message' | translate}}" formControlName="message"></textarea>
+        <div class="alert-container" *ngIf="wasSent()">
+          <div role="alert" [ngClass]="{ 'alert alert-success': true, 'fadeout': isHidden() }" *ngIf="wasSuccessful(); else failed">
+            <strong translate>home-page.contact.success.title</strong>
+            {{ 'home-page.contact.success.description' | translate }}
+          </div>
+          <ng-template #failed>
+            <div class="alert alert-danger" role="alert">
+              <strong translate>home-page.contact.error.title</strong>
+              {{ 'home-page.contact.error.description' | translate }}:
+              <a href="mailto:support@appicar.com?subject={{ 'home-page.contact.error.subject' | translate }}&body={{ 'home-page.contact.error.body' | translate }}">
+                support@appicar.com</a>!
+            </div>
+          </ng-template>
+        </div>
         <input type="submit" value="{{'home-page.contact.send' | translate}}" [disabled]="form.invalid" />
       </form>
     </div>

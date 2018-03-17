@@ -24,7 +24,17 @@
       "email": "Email",
       "subject": "Affari",
       "message": "Messaggio",
-      "send": "INVIARE"
+      "send": "INVIARE",
+      "success": {
+        "title": "Messaggio inviato!",
+        "description": "Il nostro team ti risponderà il prima possibile. Grazie per l'interesse!"
+      },
+      "error": {
+        "title": "Il messaggio non è stato inviato!",
+        "description": "Si è verificato un errore interno. Per favore, contattare a",
+        "subject": "Il messaggio del modulo di contatto non è stato inviato!",
+        "body": "Ciao, ho ricevuto questo errore nel tentativo di inviare un messaggio dal modulo di contatto:%0A%0A«Il messaggio non è stato inviato! Si è verificato un errore interno.»%0A%0ASaluti!"
+      }
     },
     "reviews": {
       "title": "Cosa Dicono I Nostri Clienti"

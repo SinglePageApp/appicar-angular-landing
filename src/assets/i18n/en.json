@@ -24,7 +24,17 @@
       "email": "Email",
       "subject": "Subject",
       "message": "Message",
-      "send": "SEND"
+      "send": "SEND",
+      "success": {
+        "title": "Message sent!",
+        "description": "Our team will respond you as soon as possible. Thanks for interesting!"
+      },
+      "error": {
+        "title": "Message wasn't sent!",
+        "description": "An internal error has ocurred. Please, contact",
+        "subject": "Contact Form's message wasn't sent!",
+        "body": "Hi, I got this error trying to send a message from the contact form:%0A%0A«Message wasn't sent! An internal error has occurred.»%0A%0ARegards!"
+      }
     },
     "reviews": {
       "title": "What Our Customers are Saying"
