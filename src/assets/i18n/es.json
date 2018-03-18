@@ -25,6 +25,12 @@
       "subject": "Asunto",
       "message": "Mensaje",
       "send": "ENVIAR",
+      "required": {
+        "name": "¡El nombre es obligatorio!",
+        "email": "¡El correo es obligatorio!",
+        "subject": "¡El asunto es obligatorio!",
+        "message": "¡El mensaje es obligatorio!"
+      },
       "success": {
         "title": "¡Mensaje enviado!",
         "description": "Nuestro equipo te responderá lo antes posible ¡Gracias por el interés!"

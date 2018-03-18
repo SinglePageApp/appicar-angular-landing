@@ -25,6 +25,12 @@
       "subject": "Affari",
       "message": "Messaggio",
       "send": "INVIARE",
+      "required": {
+        "name": "Il nome è obbligatorio!",
+        "email": "L'email è obbligatoria!",
+        "subject": "L'affari è obbligatoria!",
+        "message": "Il messagio è obbligatorio!"
+      },
       "success": {
         "title": "Messaggio inviato!",
         "description": "Il nostro team ti risponderà il prima possibile. Grazie per l'interesse!"

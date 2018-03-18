@@ -25,6 +25,12 @@
       "subject": "Subject",
       "message": "Message",
       "send": "SEND",
+      "required": {
+        "name": "Name is required!",
+        "email": "Email is required!",
+        "subject": "Subject is required!",
+        "message": "Message is required!"
+      },
       "success": {
         "title": "Message sent!",
         "description": "Our team will respond you as soon as possible. Thanks for interesting!"

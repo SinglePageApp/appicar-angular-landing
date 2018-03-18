@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { MailService } from '../../../services/mail.service';
@@ -14,16 +14,18 @@ import { MailService } from '../../../services/mail.service';
  *
  * Represents the contact form that sends an e-mail with the user's message.
  */
-export class HomeContactComponent {
+export class HomeContactComponent implements OnDestroy {
   /** Attribute used by the form tag. */
   public form: FormGroup;
+  private request;
   /** It's true if the form was submitted. */
   private sent: boolean;
   /** Determines if an e-mail was sent successfully. */
   private sentSuccessfully: boolean;
   /** Determines if alert message is hidden. */
   private hidden: boolean;
-
+  /** Form's input controls list. */
+  public inputControls: Array<string>;
   /**
    * Constructor.
    *
@@ -31,9 +33,17 @@ export class HomeContactComponent {
    * @param formBuilder The injected FormBuilder instance.
    */
   constructor(private mailService: MailService, private formBuilder: FormBuilder) {
+    this.inputControls = ['name', 'email', 'subject'];
     this.sent = false;
     this.hidden = false;
     this.createForm();
+  }
+
+  ngOnDestroy() {
+    // clean subscription when component destroy
+    if (this.request) {
+      this.request.unsubscribe();
+    }
   }
 
   /**
@@ -41,9 +51,9 @@ export class HomeContactComponent {
    */
   onSubmit() {
     const { name, email, subject, message } = this.form.value;
-    const request = this.mailService.send(name, email, subject, message);
+    this.request = this.mailService.send(name, email, subject, message);
     // Subscribes to the send e-mail's request.
-    request.subscribe(({ data }) => {
+    this.request.subscribe(({ data }) => {
       this.sent = true;
       this.sentSuccessfully = data.sendEmail;
       this.form.reset();
