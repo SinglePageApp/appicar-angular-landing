@@ -9,7 +9,7 @@ html, body {
   font-family: "Roboto Condensed", sans-serif !important;
   background-color: #000 !important;
 }
-input:disabled:hover {
+input:disabled:hover, button:disabled:hover {
   cursor: not-allowed;
 }
 body a {

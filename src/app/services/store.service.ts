@@ -6,20 +6,55 @@ import { Observable } from 'apollo-link';
 import { Observable as RxObservable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
+
+/** Limit of stores per request. */
+const LIMIT = 24;
+
 @Injectable()
 export class StoreService {
 
   public menuItem: MenuItem;
+
   private loading: boolean;
   private stores: any;
   private subject: Subject<any>;
   private searchFrom404: boolean;
+  /** It holds the count of skips for pagination. */
+  private skipCounter: number;
+  /** The total number of stores. */
+  private numStores: number;
 
   constructor(private apollo: Apollo) {
+    this.skipCounter = 0;
     this.loading = true;
     this.stores = [];
     this.subject = new Subject<any>();
     this.searchFrom404 = false;
+    this.numStores = 0;
+  }
+
+  /**
+   * Gets the total number of stores.
+   *
+   * @returns integer The total number of stores.
+   */
+  public getTotalNumber(): number {
+    return this.numStores;
+  }
+  /**
+   * Gets the total number of skipped stores by the previous requests.
+   *
+   * @returns integer The total number of skipped stores.
+   */
+  public getSkipCount(): number {
+    return this.skipCounter;
+  }
+
+  /**
+   * Resets the skip counter.
+   */
+  public resetSkipCounter() {
+    this.skipCounter = 0;
   }
 
   /**
@@ -128,7 +163,7 @@ export class StoreService {
 
     const query = gql`
       {
-        stores {
+        stores (skip: ${this.skipCounter}, limit: ${LIMIT}) {
           URI
           name
           category
@@ -136,12 +171,22 @@ export class StoreService {
           city
           image
         }
+        storesCount
       }
     `;
 
     this.apollo.watchQuery<any>({query: query}).valueChanges.subscribe(({ data, loading }) => {
       this.loading = false;
-      this.stores = data.stores;
+
+      if (this.skipCounter >= LIMIT) {
+        this.stores = this.stores.concat(data.stores);
+      } else {
+        this.stores = data.stores;
+      }
+
+      this.numStores = data.storesCount;
+      this.skipCounter += LIMIT;
+
       this.subject.next({
         isLoading: this.loading,
         stores: this.stores,

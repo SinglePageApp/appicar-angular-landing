@@ -39,6 +39,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { StorePageComponent } from './components/store-page/store-page.component';
 import { StoreMenuComponent } from './components/store-page/store-menu/store-menu.component';
 import { StoreReviewsComponent } from './components/store-page/store-reviews/store-reviews.component';
+import { StoreBoxComponent } from './components/home-page/home-stores/store-box/store-box.component';
 
 
 const appRoutes: Routes = [
@@ -79,7 +80,8 @@ registerLocaleData(localeIT);
     LogoComponent,
     StorePageComponent,
     StoreMenuComponent,
-    StoreReviewsComponent
+    StoreReviewsComponent,
+    StoreBoxComponent
   ],
   imports: [
     BrowserModule,
