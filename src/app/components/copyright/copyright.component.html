@@ -1,26 +1,7 @@
 <div class="copyright">
   <div class="container">
     <div class="w3agile-list">
-      <ul>
-        <li>
-          <a href="about.html" translate>nav.about</a>
-        </li>
-        <li>
-          <a href="#stores" translate>nav.stores</a>
-        </li>
-        <li>
-          <a href="#" class="nav-my-account" translate>nav.myAccount</a>
-        </li>
-        <li>
-          <a href="#services" translate>nav.services</a>
-        </li>
-        <li>
-          <a href="#reviews" translate>nav.reviews</a>
-        </li>
-        <li>
-          <a href="#contact" translate>nav.contact</a>
-        </li>
-      </ul>
+      <app-nav-links [isHeader]="false"></app-nav-links>
     </div>
     <div class="agileinfo">
       <p>© {{ year }} Appicar. {{ 'copyright.description' | translate }} <a href="http://w3layouts.com/">W3layouts</a></p>

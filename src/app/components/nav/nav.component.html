@@ -3,33 +3,7 @@
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Menu
     </button>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li>
-          <a routerLink="/" routerLinkActive="active" translate>nav.home</a>
-        </li>
-        <li>
-          <a routerLink="/about" routerLinkActive="active" (click)="onAboutLinkClick()" translate>nav.about</a>
-        </li>
-        <li>
-          <a routerLink="/" fragment="stores" (click)="onNavLinkClick()" translate>nav.stores</a>
-        </li>
-        <li>
-          <a class="nav-my-account" href="#" (click)="onNavLinkClick()" translate>nav.myAccount</a>
-        </li>
-        <li>
-          <a routerLink="/" fragment="services" (click)="onNavLinkClick()" translate>nav.services</a>
-        </li>
-        <li>
-          <a routerLink="/" fragment="reviews" (click)="onNavLinkClick()" translate>nav.reviews</a>
-        </li>
-        <li>
-          <a routerLink="/" fragment="contact" (click)="onNavLinkClick()" translate>nav.contact</a>
-        </li>
-        <li>
-          <nav-flags class="flags"></nav-flags>
-        </li>
-        <div class="clearfix"> </div>
-      </ul>
+      <app-nav-links [isHeader]="true"></app-nav-links>
     </div>
   </nav>
 </div>
