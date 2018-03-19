@@ -18,6 +18,7 @@ import { MailService } from './services/mail.service';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
+import { NavLinksComponent } from './components/nav/nav-links/nav-links.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CopyrightComponent } from './components/copyright/copyright.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
@@ -42,10 +43,12 @@ import { StoreReviewsComponent } from './components/store-page/store-reviews/sto
 import { StoreBoxComponent } from './components/home-page/home-stores/store-box/store-box.component';
 
 
+/** App's routes. */
 const appRoutes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: 'home', component: HomePageComponent },
   { path: 'about', component: AboutPageComponent },
   { path: 'store/:uri', component: StorePageComponent },
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: Error404Component }
 ];
 
@@ -81,7 +84,8 @@ registerLocaleData(localeIT);
     StorePageComponent,
     StoreMenuComponent,
     StoreReviewsComponent,
-    StoreBoxComponent
+    StoreBoxComponent,
+    NavLinksComponent
   ],
   imports: [
     BrowserModule,
