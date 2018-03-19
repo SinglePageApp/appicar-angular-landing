@@ -1,4 +1,9 @@
 {
+  "DB": {
+    "restaurant": "Ristorante",
+    "bar": "Bar",
+    "bar-restaurant": "Bar / Ristorante"
+  },
   "nav": {
     "home" : "Inizio",
     "about" : "Chi Siamo",
@@ -19,7 +24,23 @@
       "email": "Email",
       "subject": "Affari",
       "message": "Messaggio",
-      "send": "INVIARE"
+      "send": "INVIARE",
+      "required": {
+        "name": "Il nome è obbligatorio!",
+        "email": "L'email è obbligatoria!",
+        "subject": "L'affari è obbligatoria!",
+        "message": "Il messagio è obbligatorio!"
+      },
+      "success": {
+        "title": "Messaggio inviato!",
+        "description": "Il nostro team ti risponderà il prima possibile. Grazie per l'interesse!"
+      },
+      "error": {
+        "title": "Il messaggio non è stato inviato!",
+        "description": "Si è verificato un errore interno. Per favore, contattare a",
+        "subject": "Il messaggio del modulo di contatto non è stato inviato!",
+        "body": "Ciao, ho ricevuto questo errore nel tentativo di inviare un messaggio dal modulo di contatto:%0A%0A«Il messaggio non è stato inviato! Si è verificato un errore interno.»%0A%0ASaluti!"
+      }
     },
     "reviews": {
       "title": "Cosa Dicono I Nostri Clienti"
@@ -32,7 +53,12 @@
       "title": "I Nostri Negozi",
       "results": "Questi sono i negozi che hanno",
       "noResults": "Non ci sono negozi che hanno",
-      "menues": "nei loro menu"
+      "menues": "nei loro menu",
+      "menuesResults": ":",
+      "menuesNoResults": "!",
+      "food": "alimentare",
+      "drink": "di bevande",
+      "more": "Mostra di più"
     }
   },
   "about-page": {
@@ -43,6 +69,18 @@
       "eng": "Ing.",
       "member1": "CTO di Appicar. Ingegnere Informatico e Programmatore Full-Stack. Creatore principale del sito web, dell'app web e dell'app mobile di Appicar."
     }
+  },
+  "store-page": {
+    "description": "Descrizione:",
+    "information": "Information:",
+    "rating": "Rating:",
+    "category": "Categoria",
+    "address": "Indirizzo:",
+    "location": "Posizione:",
+    "reservations": "Prenotazioni:",
+    "reserve": "Prenotare",
+    "reviews": "Recensioni:",
+    "menu": "Il Nostro Menu"
   },
   "searchbox": {
     "iWant" : "Oggi, voglio",

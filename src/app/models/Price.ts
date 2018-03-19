@@ -15,9 +15,9 @@ export default class Price {
    * @param currency The price's currency code, i.e: 'USD', 'ARS', etc.
    * @param value The price's value in terms of the current currency.
    */
-  public constructor(currency: string, value: number) {
-    this.currency = currency;
-    this.value = value;
+  public constructor(currency?: string, value?: number) {
+    this.currency = currency || null;
+    this.value = value || 0;
   }
 
   /**

@@ -17,8 +17,8 @@ export default class Translatable {
    */
   public constructor(en: string, es?: string, it?: string) {
     this.en = en;
-    this.es = es || null;
-    this.it = it || null;
+    this.es = es || '';
+    this.it = it || '';
   }
 
   /**

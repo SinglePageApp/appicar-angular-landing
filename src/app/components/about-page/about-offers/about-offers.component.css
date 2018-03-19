@@ -6,7 +6,7 @@
   background-position: 50% 50%;
 }
 .offers {
-  background: url(../assets/images/bg1.jpg) no-repeat 0px 0px;
+  background: url(assets/images/bg1.jpg) no-repeat 0px 0px;
   padding: 4em 0;
   background-size: cover;
   text-shadow: 1px 1px #000000;

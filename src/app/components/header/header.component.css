@@ -1,7 +1,7 @@
 
 /*-- NORMAL DISPLAY --*/
 .bg-img {
-  background: url(../assets/images/bg1.jpg) no-repeat 0px -429px;
+  background: url(assets/images/bg1.jpg) no-repeat 0px -429px;
   background-size: cover;
   position: relative;
   top: -65px;
@@ -18,7 +18,7 @@
 /*-- DISPLAY: 800px --*/
 @media (max-width: 800px) {
   .bg-img {
-    background: url(../assets/images/bg1.jpg) no-repeat 0px -91px;
+    background: url(assets/images/bg1.jpg) no-repeat 0px -91px;
     background-size: cover;
   }
 }
@@ -27,7 +27,7 @@
 /*-- DISPLAY: 384px --*/
 @media (max-width: 384px) {
   .bg-img {
-    background: url(../assets/images/bg1.jpg) no-repeat 0px -83px;
+    background: url(assets/images/bg1.jpg) no-repeat 0px -83px;
     background-size: cover;
   }
 }
@@ -36,7 +36,7 @@
 /*-- DISPLAY: 320px --*/
 @media (max-width: 320px) {
   .bg-img {
-    background: url(../assets/images/bg1.jpg) no-repeat 0px -64px;
+    background: url(assets/images/bg1.jpg) no-repeat 0px -64px;
     background-size: cover;
   }
 }

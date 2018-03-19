@@ -4,12 +4,44 @@
       <h2 translate>home-page.contact.contact</h2>
     </div>
     <div class="contact-form">
-      <form action="#" method="post">
-        <input type="text" name="Name" placeholder="{{'home-page.contact.name' | translate}}" required="" />
-        <input type="text" name="Email" placeholder="{{'home-page.contact.email' | translate}}" required="" />
-        <input type="text" name="Subject" placeholder="{{'home-page.contact.subject' | translate}}" required="" />
-        <textarea name="Message" placeholder="{{'home-page.contact.message' | translate}}" required=""></textarea>
-        <input type="submit" value="{{'home-page.contact.send' | translate}}" />
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <!-- Input Fields -->
+        <fieldset *ngFor="let input of inputControls">
+          <div *ngIf="form.controls[input].errors && (form.controls[input].dirty || form.controls[input].touched)" class="alert alert-floating">
+            <div [hidden]="!form.controls[input].errors.required">
+              {{ 'home-page.contact.required.' + input | translate }}
+            </div>
+          </div>
+          <input type="text" [name]="input" placeholder="{{'home-page.contact.' + input | translate}}" [formControlName]="input" class="required" />
+        </fieldset>
+        <!-- //Input Fields -->
+
+        <!-- Message Field -->
+        <textarea name="Message" placeholder="{{'home-page.contact.message' | translate}}" formControlName="message" class="required"></textarea>
+        <div *ngIf="form.controls['message'].errors && (form.controls['message'].dirty || form.controls['message'].touched)" class="alert alert-floating-message">
+          <div [hidden]="!form.controls['message'].errors.required">
+            {{ 'home-page.contact.required.message' | translate }}
+          </div>
+        </div>
+        <!-- //Message Field -->
+
+        <!-- Alert Message -->
+        <div class="alert-container" *ngIf="wasSent()">
+          <div role="alert" [ngClass]="{ 'alert alert-success': true, 'fadeout': isHidden() }" *ngIf="wasSuccessful(); else failed">
+            <strong translate>home-page.contact.success.title</strong>
+            {{ 'home-page.contact.success.description' | translate }}
+          </div>
+          <ng-template #failed>
+            <div class="alert alert-danger" role="alert">
+              <strong translate>home-page.contact.error.title</strong>
+              {{ 'home-page.contact.error.description' | translate }}:
+              <a href="mailto:support@appicar.com?subject={{ 'home-page.contact.error.subject' | translate }}&body={{ 'home-page.contact.error.body' | translate }}">
+                support@appicar.com</a>!
+            </div>
+          </ng-template>
+        </div>
+        <!-- //Alert Message -->
+        <input type="submit" value="{{'home-page.contact.send' | translate}}" [disabled]="form.invalid" />
       </form>
     </div>
   </div>

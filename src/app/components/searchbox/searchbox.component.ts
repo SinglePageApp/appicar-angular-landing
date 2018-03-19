@@ -66,6 +66,7 @@ export class SearchboxComponent {
   public reset() {
     this.menuItemCategory = '';
     this.menuItem.setCategory('');
+    this.storeService.resetSkipCounter();
     this.storeService.findStores();
   }
 }
