@@ -1,0 +1,24 @@
+<div class="response">
+  <h3 translate>store-page.reviews</h3>
+  <div class="media response-info" *ngFor="let review of reviews">
+    <div class="media-left response-text-left">
+      <img class="media-object" src="{{ review.getClientPicture() }}" alt="{{ review.getClientName() }}" />
+      <h5>{{ review.getClientName() }}</h5>
+    </div>
+    <div class="media-body response-text-right">
+      <p>
+        {{ review.getDescription(language) }}
+      </p>
+      <ul>
+        <li>{{ review.getDate() | date:'short':'':language }}</li>
+        <li>
+          <div class="rating">
+            <i class="fa fa-star active" *ngFor="let star of review.getStars()">&nbsp;
+            </i><i class="fa fa-star" *ngFor="let star of review.getLackingStars()">&nbsp;</i>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
