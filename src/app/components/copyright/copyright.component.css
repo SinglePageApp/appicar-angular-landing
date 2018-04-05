@@ -4,22 +4,6 @@
   background: #000;
   text-align: center;
 }
-.w3agile-list ul {
-  margin: 0;
-  padding: 0;
-}
-.w3agile-list ul li {
-  display: inline-block;
-  margin: 0 2em;
-}
-.w3agile-list ul li a {
-  color: #fff;
-  font-size: 1em;
-  text-decoration: none;
-}
-.w3agile-list ul li a:hover {
-  color: #fd5c63;
-}
 .agileinfo p {
   color: #fff;
   font-size: 1em;
@@ -35,35 +19,8 @@
 
 /*-- DISPLAY: 480px --*/
 @media (max-width: 480px) {
-  .w3agile-list ul li {
-    margin: 0 1em;
-  }
   .agileinfo {
     margin: 0;
   }
 }
 /*--// DISPLAY: 480px --*/
-
-/*-- DISPLAY: 414px --*/
-@media (max-width: 414px) {
-  .w3agile-list ul li {
-    margin: 0 0.5em;
-  }
-}
-/*--// DISPLAY: 414px --*/
-
-/*-- DISPLAY: 384px --*/
-@media (max-width: 384px) {
-  .w3agile-list ul li {
-    margin: 0 0.4em;
-  }
-}
-/*--// DISPLAY: 384px --*/
-
-/*-- DISPLAY: 320px --*/
-@media (max-width: 320px) {
-  .w3agile-list ul li {
-    margin: 0 0.2em;
-  }
-}
-/*--// DISPLAY: 320px --*/

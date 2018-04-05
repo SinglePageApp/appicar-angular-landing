@@ -25,6 +25,10 @@
         </div>
         <!-- //Message Field -->
 
+        <!-- ReCAPTCHA Field -->
+        <re-captcha formControlName="captcha" name="captcha" class="captcha" required></re-captcha>
+        <!-- //ReCAPTCHA Field -->
+
         <!-- Alert Message -->
         <div class="alert-container" *ngIf="wasSent()">
           <div role="alert" [ngClass]="{ 'alert alert-success': true, 'fadeout': isHidden() }" *ngIf="wasSuccessful(); else failed">

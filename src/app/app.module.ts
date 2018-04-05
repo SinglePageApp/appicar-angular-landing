@@ -7,6 +7,8 @@ import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings, RECAPTCHA_LANGUAGE } from 'ng-recaptcha';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { registerLocaleData } from '@angular/common';
@@ -18,6 +20,7 @@ import { MailService } from './services/mail.service';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
+import { NavLinksComponent } from './components/nav/nav-links/nav-links.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CopyrightComponent } from './components/copyright/copyright.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
@@ -33,7 +36,6 @@ import { AboutTeamComponent } from './components/about-page/about-team/about-tea
 import { Error404Component } from './components/error-404/error-404.component';
 import { SearchboxComponent } from './components/searchbox/searchbox.component';
 import { GearsLoadingSpinnerComponent } from './components/loading-spinner';
-import { environment } from '../environments/environment';
 import { FlagsComponent } from './components/nav/flags/flags.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { StorePageComponent } from './components/store-page/store-page.component';
@@ -41,11 +43,15 @@ import { StoreMenuComponent } from './components/store-page/store-menu/store-men
 import { StoreReviewsComponent } from './components/store-page/store-reviews/store-reviews.component';
 import { StoreBoxComponent } from './components/home-page/home-stores/store-box/store-box.component';
 
+import { environment } from '../environments/environment';
 
+
+/** App's routes. */
 const appRoutes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: 'home', component: HomePageComponent },
   { path: 'about', component: AboutPageComponent },
   { path: 'store/:uri', component: StorePageComponent },
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: Error404Component }
 ];
 
@@ -81,7 +87,8 @@ registerLocaleData(localeIT);
     StorePageComponent,
     StoreMenuComponent,
     StoreReviewsComponent,
-    StoreBoxComponent
+    StoreBoxComponent,
+    NavLinksComponent
   ],
   imports: [
     BrowserModule,
@@ -92,6 +99,8 @@ registerLocaleData(localeIT);
     HttpClientModule,
     ApolloModule,
     HttpLinkModule,
+    RecaptchaModule.forRoot(),
+    RecaptchaFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -100,7 +109,18 @@ registerLocaleData(localeIT);
       }
     })
   ],
-  providers: [StoreService, MailService],
+  providers: [
+    StoreService,
+    MailService,
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: { siteKey: environment.RECAPTCHA.siteKey } as RecaptchaSettings,
+    },
+    {
+      provide: RECAPTCHA_LANGUAGE,
+      useValue: 'en',
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

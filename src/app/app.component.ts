@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'app';
 
   constructor(translate: TranslateService) {
@@ -16,6 +16,4 @@ export class AppComponent implements OnInit {
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     translate.use('en');
   }
-
-  ngOnInit() {}
 }
