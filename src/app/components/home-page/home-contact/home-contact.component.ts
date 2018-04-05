@@ -26,6 +26,7 @@ export class HomeContactComponent implements OnDestroy {
   private hidden: boolean;
   /** Form's input controls list. */
   public inputControls: Array<string>;
+
   /**
    * Constructor.
    *
@@ -97,6 +98,7 @@ export class HomeContactComponent implements OnDestroy {
       email: ['', Validators.required],
       subject: ['', Validators.required],
       message: ['', Validators.required],
+      captcha: ['', Validators.required]
     });
   }
 

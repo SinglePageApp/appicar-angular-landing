@@ -195,7 +195,7 @@ export class StoreService {
     });
   }
 
-  getFeaturedStores(): any {
+  public getFeaturedStores(): any {
     const query = gql`
       {
         featuredStores {
@@ -217,7 +217,7 @@ export class StoreService {
    *
    * @param menuItem The menu's item used to do the search.
    */
-  findStoresByMenuItem(menuItem: MenuItem, searchFrom404?: boolean) {
+  public findStoresByMenuItem(menuItem: MenuItem, searchFrom404?: boolean) {
     this.searchFrom404 = searchFrom404 || false;
     this.loading = true;
     this.menuItem = menuItem;
