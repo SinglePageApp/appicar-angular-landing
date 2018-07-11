@@ -2,6 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { MailService } from '../../../services/mail.service';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -17,6 +18,7 @@ import { MailService } from '../../../services/mail.service';
 export class HomeContactComponent implements OnDestroy {
   /** Attribute used by the form tag. */
   public form: FormGroup;
+  /** The request to be perform against the API server. */
   private request;
   /** It's true if the form was submitted. */
   private sent: boolean;
@@ -27,13 +29,16 @@ export class HomeContactComponent implements OnDestroy {
   /** Form's input controls list. */
   public inputControls: Array<string>;
 
+  public language: String;
+
   /**
    * Constructor.
    *
    * @param mailService The injected MailService instance.
    * @param formBuilder The injected FormBuilder instance.
    */
-  constructor(private mailService: MailService, private formBuilder: FormBuilder) {
+  constructor(translate: TranslateService, private mailService: MailService, private formBuilder: FormBuilder) {
+    this.language = translate.getDefaultLang();
     this.inputControls = ['name', 'email', 'subject'];
     this.sent = false;
     this.hidden = false;

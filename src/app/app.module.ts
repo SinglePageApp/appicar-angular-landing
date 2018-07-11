@@ -8,8 +8,8 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
-import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings, RECAPTCHA_LANGUAGE } from 'ng-recaptcha';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recaptcha';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { registerLocaleData } from '@angular/common';
 import localeES from '@angular/common/locales/es';
@@ -115,16 +115,12 @@ registerLocaleData(localeIT);
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: { siteKey: environment.RECAPTCHA.siteKey } as RecaptchaSettings,
-    },
-    {
-      provide: RECAPTCHA_LANGUAGE,
-      useValue: 'en',
     }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(apollo: Apollo, httpLink: HttpLink) {
+  constructor(apollo: Apollo, httpLink: HttpLink, translate: TranslateService) {
     apollo.create({
       link: httpLink.create({ uri: environment.API_URL }),
       cache: new InMemoryCache()
