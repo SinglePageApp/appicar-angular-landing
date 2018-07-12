@@ -1,6 +1,6 @@
-<div id="stores" class="special">
+<div id="stores" class="home-stores">
   <div class="container">
-    <div class="special-heading">
+    <div class="home-stores-heading">
       <h3 translate>home-page.stores.title</h3>
     </div>
 
@@ -8,7 +8,7 @@
       {{ 'loading-spinner.loading' | translate }}
     </gears-loading-spinner>
 
-    <div class="special-grids" *ngIf="!isLoading">
+    <div class="home-stores-grids" *ngIf="!isLoading">
       <h4 *ngIf="menuItem">
         <span class="results" *ngIf="stores.length; else no_results">
           {{ 'home-page.stores.results' | translate }}
@@ -26,7 +26,7 @@
         </ng-template>
       </h4>
       <!-- Stores list -->
-      <div class="col-md-4 w3l-special-grid" *ngFor="let store of stores; let i = index;" [attr.data-index]="i">
+      <div class="col-md-4 w3l-home-stores-grid" *ngFor="let store of stores; let i = index;" [attr.data-index]="i">
         <app-store-box [store]="store" [rowOdd]="isRowOdd(i)"></app-store-box>
       </div>
       <!-- /Stores list -->
