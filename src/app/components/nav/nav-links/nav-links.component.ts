@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 
 import { StoreService } from '../../../services/store.service';
 
@@ -23,10 +23,8 @@ export class NavLinksComponent {
 
   /**
    * This event activates when the About page's link is clicked.
-   *
-   * @param event The Event object.
    */
-  public onAboutLinkClick(event: Event) {
+  public onAboutLinkClick() {
     this.storeService.resetSearchFrom404State();
   }
 }
