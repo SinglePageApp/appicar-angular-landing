@@ -1,6 +1,6 @@
 /*-- NORMAL DISPLAY --*/
 .contact {
-  padding: 4em 0;
+  padding: 4em 0 8em 0;
   background: #eaf7fd;
 }
 .contact .contact-form input[type="text"],
@@ -131,6 +131,10 @@
   margin-top: 1em;
   position: absolute;
   width: 74%;
+}
+.captcha {
+  position: absolute;
+  margin-top: 1em;
 }
 
 /*-- Validations --*/
@@ -271,6 +275,10 @@
   }
   .contact-form textarea {
     padding: 0.5em;
+  }
+  .captcha {
+    position: relative;
+    display: block;
   }
   .alert-container {
     position: initial;

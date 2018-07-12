@@ -7,7 +7,9 @@ import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recaptcha';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { registerLocaleData } from '@angular/common';
 import localeES from '@angular/common/locales/es';
@@ -34,13 +36,14 @@ import { AboutTeamComponent } from './components/about-page/about-team/about-tea
 import { Error404Component } from './components/error-404/error-404.component';
 import { SearchboxComponent } from './components/searchbox/searchbox.component';
 import { GearsLoadingSpinnerComponent } from './components/loading-spinner';
-import { environment } from '../environments/environment';
 import { FlagsComponent } from './components/nav/flags/flags.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { StorePageComponent } from './components/store-page/store-page.component';
 import { StoreMenuComponent } from './components/store-page/store-menu/store-menu.component';
 import { StoreReviewsComponent } from './components/store-page/store-reviews/store-reviews.component';
 import { StoreBoxComponent } from './components/home-page/home-stores/store-box/store-box.component';
+
+import { environment } from '../environments/environment';
 
 
 /** App's routes. */
@@ -96,6 +99,8 @@ registerLocaleData(localeIT);
     HttpClientModule,
     ApolloModule,
     HttpLinkModule,
+    RecaptchaModule.forRoot(),
+    RecaptchaFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -104,11 +109,18 @@ registerLocaleData(localeIT);
       }
     })
   ],
-  providers: [StoreService, MailService],
+  providers: [
+    StoreService,
+    MailService,
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: { siteKey: environment.RECAPTCHA.siteKey } as RecaptchaSettings,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(apollo: Apollo, httpLink: HttpLink) {
+  constructor(apollo: Apollo, httpLink: HttpLink, translate: TranslateService) {
     apollo.create({
       link: httpLink.create({ uri: environment.API_URL }),
       cache: new InMemoryCache()
