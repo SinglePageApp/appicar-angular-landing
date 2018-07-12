@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import MenuItem from '../models/MenuItem';
-import { Observable } from 'apollo-link';
-import { Observable as RxObservable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable ,  Subject } from 'rxjs';
 
 
 /** Limit of stores per request. */
@@ -78,7 +76,7 @@ export class StoreService {
    *
    * @param URI The stores URI parameter.
    */
-  public getStore(URI: string): RxObservable<any> {
+  public getStore(URI: string): Observable<any> {
     const query = gql`
       {
         store (URI: "${URI}") {
@@ -151,7 +149,7 @@ export class StoreService {
    *
    * @returns rxjs/Observable<any> An observable reference of stores.
   */
-  public getStores(): RxObservable<any> {
+  public getStores(): Observable<any> {
     return this.subject.asObservable();
   }
 

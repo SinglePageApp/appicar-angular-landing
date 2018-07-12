@@ -23,7 +23,7 @@ body a {
 body a:hover {
   text-decoration: none !important;
 }
-.special-heading h3,
+.home-stores-heading h3,
 .features h3,
 .customer-heading h3,
 .footer-heading h3 {
@@ -224,7 +224,7 @@ h2.typoh2 {
 /*--//Shortcodes--*/
 /*-- responsive --*/
 @media (max-width: 640px) {
-  .special-heading h3,
+  .home-stores-heading h3,
   .features h3,
   .customer-heading h3,
   .footer-heading h3 {
@@ -232,7 +232,7 @@ h2.typoh2 {
   }
 }
 @media (max-width: 480px) {
-  .special-heading h3,
+  .home-stores-heading h3,
   .features h3,
   .customer-heading h3,
   .footer-heading h3 {
