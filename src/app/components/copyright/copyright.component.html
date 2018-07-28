@@ -1,10 +1,14 @@
 <div class="copyright">
   <div class="container">
     <div class="w3agile-list">
-      <app-nav-links [isHeader]="false"></app-nav-links>
+      <app-nav-links id="copyright-nav-links" [isHeader]="false"></app-nav-links>
     </div>
     <div class="agileinfo">
-      <p>© {{ year }} Appicar. {{ 'copyright.description' | translate }} <a href="http://w3layouts.com/">W3layouts</a></p>
+      <p>
+        © {{ year }} Appicar.
+        <span id="copyright-description" translate>copyright.description</span>&nbsp;
+        <a href="http://w3layouts.com/">W3layouts</a>
+      </p>
     </div>
   </div>
 </div>

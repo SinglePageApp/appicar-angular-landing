@@ -1,9 +1,12 @@
 <div class="top-nav">
   <nav class="navbar navbar-default">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Menu
+    <button id="nav-btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#nav-collapse"
+    >
+      Menu
     </button>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <app-nav-links [isHeader]="true"></app-nav-links>
+    <div id="nav-collapse" class="collapse navbar-collapse id-nav-collapse">
+      <app-nav-links id="nav-links" [isHeader]="true"></app-nav-links>
     </div>
   </nav>
 </div>

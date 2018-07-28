@@ -7,31 +7,34 @@
   <div class="banner">
     <div class="container">
       <div class="banner-info">
-        <h2 translate>home-page.header.title</h2>
-        <p translate>home-page.header.description</p>
+        <h2 id="home-page-header-title" translate>home-page.header.title</h2>
+        <p id="home-page-description" translate>home-page.header.description</p>
       </div>
 
-      <gears-loading-spinner *ngIf="isLoading">
+      <gears-loading-spinner id="home-page-header-spinner" *ngIf="isLoading">
         {{ 'loading-spinner.loading' | translate }}
       </gears-loading-spinner>
 
-      <div class="banner-grads" *ngIf="!isLoading">
+      <div id="fstores-container" class="banner-grads" *ngIf="!isLoading">
 
-        <div class="col-md-4 banner-grad" *ngFor="let store of featuredStores">
+        <!-- Featured store -->
+        <div id="fstore-{{ i }}" class="fstore col-md-4 banner-grad" *ngFor="let fstore of featuredStores; let i = index">
           <div class="banner-grad-img">
-            <a routerLink="/store/{{ store.URI }}">
-              <img src="{{ store.image }}" alt="{{ store.name }}" />
+            <a class="fstore-link fstore-uri" routerLink="/store/{{ fstore.URI }}">
+              <img class="fstore-image" src="{{ fstore.image }}" alt="{{ fstore.name }}" />
             </a>
-            <h4>{{ store.name }}</h4>
+            <h4 class="fstore-name">{{ fstore.name }}</h4>
             <p>
-              <span class="storeDescription" translate>{{ store.category }}</span>
-              <br /> {{ store.address }}, {{ store.city }}
+              <span class="fstore-category" translate>{{ fstore.category }}</span><br />
+              <span class="fstore-address">{{ fstore.address }}, {{ fstore.city }}</span>
             </p>
           </div>
         </div>
+        <!-- /Featured store -->
 
         <div class="clearfix"></div>
-        <app-searchbox></app-searchbox>
+        <app-searchbox id="searchbox"></app-searchbox>
+
       </div>
 
     </div>

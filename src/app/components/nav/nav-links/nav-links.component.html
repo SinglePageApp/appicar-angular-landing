@@ -1,27 +1,27 @@
 <ul [ngClass]="{ 'nav navbar-nav': isHeader, 'navbar-bottom': !isHeader }">
   <li>
-    <a routerLink="/home" routerLinkActive="active" translate>nav.home</a>
+    <a id="link-home" routerLink="/home" routerLinkActive="active" translate>nav.home</a>
   </li>
   <li>
-    <a routerLink="/about" routerLinkActive="active" (click)="onAboutLinkClick()" translate>nav.about</a>
+    <a id="link-about" routerLink="/about" routerLinkActive="active" (click)="onAboutLinkClick()" translate>nav.about</a>
   </li>
   <li>
-    <a routerLink="/home" fragment="stores" translate>nav.stores</a>
+    <a id="link-stores" routerLink="/home" fragment="stores" translate>nav.stores</a>
+  </li>
+  <!--li>
+    <a id="link-myaccount" class="nav-my-account" href="#" translate>nav.myAccount</a>
+  </li-->
+  <li>
+    <a id="link-services" routerLink="/home" fragment="services" translate>nav.services</a>
   </li>
   <li>
-    <a class="nav-my-account" href="#" translate>nav.myAccount</a>
+    <a id="link-reviews" routerLink="/home" fragment="reviews" translate>nav.reviews</a>
   </li>
   <li>
-    <a routerLink="/home" fragment="services" translate>nav.services</a>
-  </li>
-  <li>
-    <a routerLink="/home" fragment="reviews" translate>nav.reviews</a>
-  </li>
-  <li>
-    <a routerLink="/home" fragment="contact" translate>nav.contact</a>
+    <a id="link-contact" routerLink="/home" fragment="contact" translate>nav.contact</a>
   </li>
   <li *ngIf="isHeader">
-    <nav-flags class="flags"></nav-flags>
+    <nav-flags id="nav-flags" class="flags"></nav-flags>
   </li>
   <div class="clearfix"></div>
 </ul>

@@ -1,66 +1,68 @@
-<app-header></app-header>
+<app-header id="store-page-header"></app-header>
 
-<div class="store">
+<div id="store-page-container" class="store">
   <!-- single -->
   <div class="blog">
     <!-- container -->
     <div class="container">
       <div class="blog-top-left-grid">
         <div class="categories">
-          <img src="{{ store.getImage() }}" alt="{{ store.getName() }}" />
+          <img id="store-page-image" src="{{ store.getImage() }}" alt="{{ store.getName() }}" />
         </div>
         <div class="categories info">
-          <h3 translate>store-page.information</h3>
+          <h3 id="store-page-information" translate>store-page.information</h3>
           <article>
-            <section>
-              <h5 translate>store-page.rating</h5>
+            <section id="store-page-rating">
+              <h5 class="rating-title" translate>store-page.rating</h5>
               <ul>
                 <li>
-                  <div class="rating" *ngIf="store.getStars()">
-                    <i class="fa fa-star active" *ngFor="let star of store.getStars()">&nbsp;
-                    </i><i class="fa fa-star" *ngFor="let star of store.getLackingStars()"></i>
+                  <div class="rating-stars rating" *ngIf="store.getStars()">
+                    <i class="rating-star fa fa-star active" *ngFor="let star of store.getStars()">&nbsp;
+                    </i><i class="rating-lacking-star fa fa-star" *ngFor="let star of store.getLackingStars()"></i>
                   </div>
                 </li>
               </ul>
             </section>
-            <section>
-              <h5 translate>store-page.category</h5>
+            <section id="store-page-category">
+              <h5 class="category-title" translate>store-page.category</h5>
               <ul>
-                <li translate>{{ store.getCategory() }}</li>
+                <li class="category" translate>{{ store.getCategory() }}</li>
               </ul>
             </section>
-            <section>
-              <h5 translate>store-page.address</h5>
+            <section id="store-page-address">
+              <h5 class="address-title" translate>store-page.address</h5>
               <ul>
-                <li>{{ store.getAddress() }}</li>
+                <li class="address">{{ store.getAddress() }}</li>
               </ul>
             </section>
-            <section>
-              <h5 translate>store-page.location</h5>
+            <section id="store-page-location">
+              <h5 class="location-title" translate>store-page.location</h5>
               <ul>
-                <li>{{ store.getLocation() }}</li>
+                <li class="location">{{ store.getLocation() }}</li>
               </ul>
             </section>
           </article>
         </div>
-        <div class="categories">
+
+        <!--div class="categories">
           <h3 translate>store-page.reservations</h3>
           <span class="btn-reserve-container">
             <a href="#">
               <span class="label label-primary" translate>store-page.reserve</span>
             </a>
           </span>
-        </div>
+        </div-->
+
       </div>
       <div class="blog-top-right-grid">
         <div class="left-blog left-single">
           <!-- Description -->
-          <div class="blog-left">
+          <div id="store-page-description" class="blog-left">
             <div class="single-left-left">
-              <h3 translate>store-page.description</h3>
+              <h3 class="description-title" translate>store-page.description</h3>
             </div>
             <div class="blog-left-bottom">
-              <p>
+              <p class="description">
                 {{ store.getDescription(language) }}
               </p>
             </div>
@@ -68,17 +70,17 @@
           <!-- //Description -->
 
           <!-- Map -->
-          <div class="map">
+          <div id="store-page-map" class="map-container">
             <div class="single-left-left">
-              <h3 translate>store-page.location</h3>
+              <h3 class="map-title" translate>store-page.location</h3>
             </div>
             <div class="blog-left-bottom">
-              <iframe [src]="mapsURL" allowfullscreen=""></iframe>
+              <iframe class="map" [src]="mapsURL" allowfullscreen=""></iframe>
             </div>
           </div>
           <!-- //Map -->
 
-          <app-store-reviews *ngIf="store.hasReviews()" [reviews]="store.getReviews()" [language]="language">
+          <app-store-reviews id="store-page-reviews" *ngIf="store.hasReviews()" [reviews]="store.getReviews()" [language]="language">
           </app-store-reviews>
 
         </div>
@@ -89,5 +91,5 @@
   </div>
   <!-- //single -->
 
-  <app-store-menu *ngIf="store.hasMenu()" [menu]="store.getMenu()"></app-store-menu>
+  <app-store-menu id="store-page-menu" *ngIf="store.hasMenu()" [menu]="store.getMenu()"></app-store-menu>
 </div>

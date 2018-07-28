@@ -12,7 +12,7 @@
   min-height: 0 !important;
   padding: 0 !important;
 }
-div#bs-example-navbar-collapse-1 {
+.id-nav-collapse {
   padding: 0;
 }
 /* //DEFAULT DISPLAY */
@@ -30,7 +30,7 @@ div#bs-example-navbar-collapse-1 {
     float: left;
     width: 77%;
   }
-  div#bs-example-navbar-collapse-1 {
+  .id-nav-collapse {
     padding: 0;
     width: 100%;
     position: absolute;

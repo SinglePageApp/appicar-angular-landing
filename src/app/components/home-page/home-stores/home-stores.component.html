@@ -1,15 +1,17 @@
 <div id="stores" class="home-stores">
   <div class="container">
     <div class="home-stores-heading">
-      <h3 translate>home-page.stores.title</h3>
+      <h3 id="home-page-stores-title" translate>home-page.stores.title</h3>
     </div>
 
-    <gears-loading-spinner *ngIf="isLoading">
+    <gears-loading-spinner id="home-stores-spinner" *ngIf="isLoading">
       {{ 'loading-spinner.loading' | translate }}
     </gears-loading-spinner>
 
-    <div class="home-stores-grids" *ngIf="!isLoading">
-      <h4 *ngIf="menuItem">
+    <div id="home-page-stores-container" class="home-stores-grids" *ngIf="!isLoading">
+
+      <!-- Results alert -->
+      <h4 id="home-page-stores-results-alert" *ngIf="menuItem">
         <span class="results" *ngIf="stores.length; else no_results">
           {{ 'home-page.stores.results' | translate }}
           <b><i>{{ menuItem.getCategory() }}</i></b>
@@ -25,17 +27,25 @@
           </span>
         </ng-template>
       </h4>
+      <!-- /Results alert -->
+
       <!-- Stores list -->
-      <div class="col-md-4 w3l-home-stores-grid" *ngFor="let store of stores; let i = index;" [attr.data-index]="i">
-        <app-store-box [store]="store" [rowOdd]="isRowOdd(i)"></app-store-box>
+      <div class="col-md-4 w3l-home-stores-grid" *ngFor="let store of stores; let i = index;">
+        <app-store-box id="home-page-stores-store-{{ i }}" class="store" [store]="store" [rowOdd]="isRowOdd(i)">
+        </app-store-box>
       </div>
       <!-- /Stores list -->
+
       <div class="clearfix"></div>
-      <div class="btn-container" *ngIf="isMoreButtonEnabled()">
-        <button class="btn-more" (click)="onClickShowMore()" translate>
+
+      <!-- More button -->
+      <div id="home-page-stores-more-btn-container" class="btn-container" *ngIf="isMoreButtonEnabled()">
+        <button id="home-page-stores-more-btn" class="btn-more" (click)="onClickShowMore()" translate>
           home-page.stores.more
         </button>
       </div>
+      <!-- /More button -->
+
     </div>
   </div>
 </div>
