@@ -1,31 +1,34 @@
 <div class="search-box">
   <div class="input-group search-input">
     <span class="input-group-addon" id="basic-addon1">
-      <span translate>searchbox.iWant</span>
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span id="searchbox-iWant" translate>searchbox.iWant</span>
+      <button id="searchbox-type-dropdown-btn" type="button" class="btn btn-default dropdown-toggle"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+      >
         {{ 'searchbox.' + menuItem.getAction() + 'Action' | translate }}
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
+      <ul id="searchbox-type-dropdown" class="dropdown-menu">
         <li>
-          <a routerLink="" (click)="changeMenuItemType('eat')" translate>searchbox.eatAction</a>
+          <a class="eat" routerLink="" (click)="changeMenuItemType('eat')" translate>searchbox.eatAction</a>
         </li>
         <li>
-          <a routerLink="" (click)="changeMenuItemType('drink')" translate>searchbox.drinkAction</a>
+          <a class="drink" routerLink="" (click)="changeMenuItemType('drink')" translate>searchbox.drinkAction</a>
         </li>
       </ul>
     </span>
-    <input type="text"
-           id="menuItemCategory"
-           #name="ngModel"
-           class="form-control"
-           [placeholder]="('searchbox.input'| translate) + ('searchbox.' + menuItem.toString() | translate) + ('searchbox.category' | translate)"
-           [(ngModel)]="menuItemCategory"
-           (keyup.enter)="search()"
+    <input
+      id="searchbox-menu-input"
+      type="text"
+      #name="ngModel"
+      class="form-control"
+      [placeholder]="('searchbox.input'| translate) + ('searchbox.' + menuItem.toString() | translate) + ('searchbox.category' | translate)"
+      [(ngModel)]="menuItemCategory"
+      (keyup.enter)="search()"
     />
     <span class="input-group-btn">
-      <button type="button" class="btn btn-default btn-reset" (click)="reset()" translate>searchbox.reset</button>
-      <button class="btn btn-default" type="button" (click)="search()" translate>searchbox.go</button>
+      <button id="searchbox-reset-btn" type="button" class="btn btn-default btn-reset" (click)="reset()" translate>searchbox.reset</button>
+      <button id="searchbox-search-btn" class="btn btn-default" type="button" (click)="search()" translate>searchbox.go</button>
     </span>
   </div>
 </div>

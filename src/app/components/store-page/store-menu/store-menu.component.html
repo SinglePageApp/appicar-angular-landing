@@ -1,16 +1,16 @@
 <div class="menu">
   <div class="container">
     <div class="menu-heading">
-      <h2 translate>store-page.menu</h2>
+      <h2 id="store-page-menu-title" translate>store-page.menu</h2>
     </div>
     <div class="menu-top-grids">
       <div class="w3ls-menu-grids">
-        <div class="col-md-3 menu-grid" *ngFor="let item of menu.getItems()">
+        <div id="menu-item-{{ i }}" class="col-md-3 menu-grid" *ngFor="let item of menu.getItems(); let i = index">
           <div class="agile-menu-grid">
-            <img src="{{ item.getPicture() }}" alt="" />
+            <img class="menu-item-picture" src="{{ item.getPicture() }}" alt="" />
             <div class="agileits-caption">
-              <h4>{{ item.getName(language) }}</h4>
-              <p>$ {{ item.getPrice(currency) }}</p>
+              <h4 class="menu-item-name">{{ item.getName(language) }}</h4>
+              <p class="menu-item-price">$ {{ item.getPrice(currency) }}</p>
             </div>
           </div>
         </div>
