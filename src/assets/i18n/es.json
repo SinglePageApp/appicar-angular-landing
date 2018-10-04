@@ -42,10 +42,16 @@
   "about-page": {
     "title":  "Acerca de Nosotros",
     "offers": "Nuestras ofertas",
+    "description1": "Somos una compañía que piensa en brindarle al usuario toda la simplicidad y la comodidad posible a la hora de elegir y disfrutar de una buena comida en el lugar deseado. Te ofrecemos todas las herramientas para organizar tu salida, desde el estacionamiento,  la búsqueda, elección y reserva del  lugar; una carta con imágenes de cada plato hasta las formas de pago, incluyendo un eficiente método de división exacta de la cuenta entre cada uno de los comensales ideal para eventos grupales. Todo muy simple y desde tu celular.",
+    "description2": "Appicar es una aplicación diseñada para hacer la vida más fácil a las personas cuando se trata de disfrutar de una salida para comer o beber. Pero no solo nos enfocamos en el usuario consumidor sino que también proporcionamos diversas herramientas para el beneficio de los lugares a los que asistirán estas personas, es decir, su negocio. Para empezar, le decimos que tenemos un sistema de reserva efectivo en el que el usuario puede ver en tiempo real las tablas disponibles o solicitan un lugar para un cierto número de personas, esta reserva ya cuenta con los datos del usuario y puede tener un pequeño costo que luego se restablecerá automáticamente en la cuenta final. Una vez que llega y se ubica en su lugar, el usuario puede llamar al camarero tantas veces como sea necesario a través de la aplicación, esto generará un tipo de alarma en el sistema local. Appicar también organiza cada pedido, ya sea grupal o individual, de cada mesa con sus respectivos costos, que se pueden liquidar de diferentes maneras y a través de nuestra aplicación. Estamos interesados ​​en que su negocio crezca de la mano de Appicar.",
     "team": {
       "title": "Equipo de Trabajo",
-      "eng": "Ing.",
-      "member1": "CTO de Appicar. Ingeniero en Informática y Desarrollador Full-Stack. Creador principal del sitio web de Appicar, la aplicación web y la aplicación móvil."
+      "degree1": "Ing.",
+      "member1": "CTO de Appicar. Ingeniero en Informática y Desarrollador Full-Stack. Creador principal del sitio web de Appicar, la aplicación web y la aplicación móvil.",
+      "degree2": "Téc. Sup.",
+      "member2": "Investigación de Mercado y Control de Calidad.",
+      "degree3": "Diseñador",
+      "member3": "Diseño Gráfico y Publicitario."
     }
   },
   "searchbox": {
@@ -69,6 +75,6 @@
     "description": "Todos los derechos reservados. Diseñado por"
   },
   "error-404": {
-    "description": "Uuuuuuups! Parece que no se existe esta ubicación. Intente en los siguientes enlaces, haga clic en el menú superior o realice una búsqueda."
+    "description": "Uuuuuuups! Parece que no existe esta ubicación. Intente en los siguientes enlaces, haga clic en el menú superior o realice una búsqueda."
   }
 }
