@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ISubscription } from "rxjs/Subscription";
 
 import { StoreService } from '../../../services/store.service';
 import Store from '../../../models/Store';
@@ -11,7 +11,8 @@ import MenuItem from '../../../models/MenuItem';
   templateUrl: './home-stores.component.html',
   styleUrls: ['./home-stores.component.css']
 })
-export class HomeStoresComponent implements OnInit {
+export class HomeStoresComponent implements OnInit, OnDestroy {
+  private subscription: ISubscription;
   /** The current row's number. */
   private currentRowNum: number;
   /** Determines if the more button is disabled. */
@@ -37,7 +38,7 @@ export class HomeStoresComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.storeService.getStores().subscribe(
+    this.subscription = this.storeService.getStores().subscribe(
       response => {
         this.isLoading = response.isLoading;
         this.stores = response.stores;
@@ -53,13 +54,16 @@ export class HomeStoresComponent implements OnInit {
       error => {
         console.log('Stores observable error:');
         console.log(error);
-      },
-      () => {}
+      }
     );
     // If a search was performed from inside an Error404Component don't find the stores.}}
     if (!this.storeService.isSearchFrom404()) {
       this.storeService.findStores();
     }
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   /**

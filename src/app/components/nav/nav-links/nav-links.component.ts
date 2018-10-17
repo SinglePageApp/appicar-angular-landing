@@ -22,6 +22,14 @@ export class NavLinksComponent {
   constructor(private storeService: StoreService) {}
 
   /**
+   * This event activates when the Home page's link is clicked.
+   */
+  public onHomeLinkClick() {
+    this.storeService.resetSkipCounter();
+    this.storeService.findStores();
+  }
+
+  /**
    * This event activates when the About page's link is clicked.
    */
   public onAboutLinkClick() {
