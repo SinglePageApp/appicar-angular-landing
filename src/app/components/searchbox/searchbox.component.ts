@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { StoreService } from '../../services/store.service';
 import MenuItem from '../../models/MenuItem';
@@ -24,9 +24,11 @@ export class SearchboxComponent {
   /**
    * Constructor.
    *
+   * @param route The ActivatedRoute dependency injection.
+   * @param router The Router dependency injection.
    * @param storeService StoreService dependency injection.
    */
-  constructor(private router: Router, private storeService: StoreService) {
+  constructor(private route: ActivatedRoute, private router: Router, private storeService: StoreService) {
     this.menuItem = new Food();
     this.menuItemCategory = '';
   }
@@ -48,15 +50,15 @@ export class SearchboxComponent {
    * Search stores by the menu item's category they have.
    */
   public search() {
-    const isSearchFrom404 = this.router.url === '/404';
-    this.menuItem.setCategory(this.menuItemCategory);
+    const isSearchFrom404 = this.route.component['name'] === 'Error404Component';
     // If the input isn't empty perform the search
-    if (this.menuItemCategory) {
+    if (!this.isBlank(this.menuItemCategory)) {
+      this.menuItem.setCategory(this.menuItemCategory.trim());
       this.storeService.findStoresByMenuItem(this.menuItem, isSearchFrom404);
     }
     // Redirect to HomePageComponent from Error404Component.
     if (isSearchFrom404) {
-      this.router.navigateByUrl('/#stores');
+      this.router.navigateByUrl('/home#stores');
     }
   }
 
@@ -68,5 +70,15 @@ export class SearchboxComponent {
     this.menuItem.setCategory('');
     this.storeService.resetSkipCounter();
     this.storeService.findStores();
+  }
+
+  /**
+   * Checks if the given string is blank, null or undefined.
+   *
+   * @param str The string to check.
+   * @returns true if it's blank, false otherwise.
+   */
+  private isBlank(str: string): boolean {
+    return (!str || /^\s*$/.test(str));
   }
 }
