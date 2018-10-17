@@ -1,6 +1,6 @@
 <ul [ngClass]="{ 'nav navbar-nav': isHeader, 'navbar-bottom': !isHeader }">
   <li>
-    <a id="link-home" routerLink="/home" routerLinkActive="active" translate>nav.home</a>
+    <a id="link-home" routerLink="/home" routerLinkActive="active" (click)="onHomeLinkClick()" translate>nav.home</a>
   </li>
   <li>
     <a id="link-about" routerLink="/about" routerLinkActive="active" (click)="onAboutLinkClick()" translate>nav.about</a>
