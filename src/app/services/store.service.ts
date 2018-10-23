@@ -214,15 +214,16 @@ export class StoreService {
    * Gets all the stores from the API server that have the given item in their menues.
    *
    * @param menuItem The menu's item used to do the search.
+   * @param language The current language used.
    */
-  public findStoresByMenuItem(menuItem: MenuItem, searchFrom404?: boolean) {
+  public findStoresByMenuItem(menuItem: MenuItem, language: string, searchFrom404?: boolean) {
     this.searchFrom404 = searchFrom404 || false;
     this.loading = true;
     this.menuItem = menuItem;
 
     const query = gql`
       {
-        stores (menuItemType: "${menuItem.toString()}", menuItemCategory: "${menuItem.getCategory()}") {
+        stores (menuItemType: "${menuItem.toString()}", menuItemName: "${menuItem.getCategory()}", language: "${language}") {
           URI
           name
           category
