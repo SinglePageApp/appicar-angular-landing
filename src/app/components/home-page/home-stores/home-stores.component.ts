@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ISubscription } from "rxjs/Subscription";
+import { ISubscription } from 'rxjs/Subscription';
 
 import { StoreService } from '../../../services/store.service';
-import Store from '../../../models/Store';
 import MenuItem from '../../../models/MenuItem';
 
 
@@ -63,6 +62,7 @@ export class HomeStoresComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.storeService.resetSkipCounter();
     this.subscription.unsubscribe();
   }
 
