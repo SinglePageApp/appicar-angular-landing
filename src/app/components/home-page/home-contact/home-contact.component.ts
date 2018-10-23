@@ -28,7 +28,7 @@ export class HomeContactComponent implements OnDestroy {
   private hidden: boolean;
   /** Form's input controls list. */
   public inputControls: Array<string>;
-
+  /** The app's current language */
   public language: String;
 
   /**

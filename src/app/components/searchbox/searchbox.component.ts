@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 import { StoreService } from '../../services/store.service';
 import MenuItem from '../../models/MenuItem';
@@ -20,6 +21,8 @@ import Drink from '../../models/Drink';
 export class SearchboxComponent {
   public menuItem: MenuItem;
   public menuItemCategory: string;
+  /** The app's translatable service. */
+  public t: TranslateService;
 
   /**
    * Constructor.
@@ -28,7 +31,13 @@ export class SearchboxComponent {
    * @param router The Router dependency injection.
    * @param storeService StoreService dependency injection.
    */
-  constructor(private route: ActivatedRoute, private router: Router, private storeService: StoreService) {
+  constructor(
+    translate: TranslateService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private storeService: StoreService
+  ) {
+    this.t = translate;
     this.menuItem = new Food();
     this.menuItemCategory = '';
   }
@@ -54,7 +63,7 @@ export class SearchboxComponent {
     // If the input isn't empty perform the search
     if (!this.isBlank(this.menuItemCategory)) {
       this.menuItem.setCategory(this.menuItemCategory.trim());
-      this.storeService.findStoresByMenuItem(this.menuItem, isSearchFrom404);
+      this.storeService.findStoresByMenuItem(this.menuItem, this.t.currentLang, isSearchFrom404);
     }
     // Redirect to HomePageComponent from Error404Component.
     if (isSearchFrom404) {
