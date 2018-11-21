@@ -14,9 +14,8 @@ export default abstract class MenuItem extends Item {
    *
    * @returns string A string representation of this object.
   */
-  public toString(): string {
-    return this.constructor.name.toLowerCase();
-  }
+  public abstract toString(): string;
+
   /**
    * Gets the menu item's type action, i.e: food -> "eat", drink -> "drink".
    *
@@ -41,5 +40,4 @@ export default abstract class MenuItem extends Item {
   public setCategory(category: string) {
     this.category = category;
   }
-
 }

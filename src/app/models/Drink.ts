@@ -28,6 +28,10 @@ export default class Drink extends MenuItem {
     this.category = category || '';
   }
 
+  public toString(): string {
+    return 'food';
+  }
+
   public getAction(): string {
     return 'drink';
   }
