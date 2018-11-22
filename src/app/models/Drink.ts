@@ -29,7 +29,7 @@ export default class Drink extends MenuItem {
   }
 
   public toString(): string {
-    return 'food';
+    return 'drink';
   }
 
   public getAction(): string {

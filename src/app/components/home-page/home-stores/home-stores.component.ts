@@ -31,7 +31,6 @@ export class HomeStoresComponent implements OnInit, OnDestroy {
   constructor(private storeService: StoreService) {
     this.stores = [];
     this.isLoading = true;
-    this.currentRowNum = 0;
     this.menuItem = null;
     this.moreButtonEnabled = true;
   }
@@ -72,10 +71,9 @@ export class HomeStoresComponent implements OnInit, OnDestroy {
    * @param i Number of the i-th element.
    */
   public isRowOdd(i: number) {
-    this.currentRowNum += (i % 3 === 0 ? 1 : 0);
-    // console.log('Row ' + this.currentRowNum + ': Element ' + i);
+    const row = Math.floor(i / 3);
 
-    return this.currentRowNum % 2 !== 0;
+    return (row % 2 === 0);
   }
 
   /**
