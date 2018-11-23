@@ -43,11 +43,36 @@
       }
     },
     "reviews": {
-      "title": "¿Qué dicen nuestros clientes?"
+      "title": "¿Qué dicen nuestros clientes?",
+      "text1": "Appicar me parece una excelente herramienta, salimos a comer entre muchos amigos, incluso gente que no conocía y cada uno  o cada grupo pidió cosas distintas. Con esta app pudimos saber cuánto tenía que pagar exactamente cada uno, ya sea individual o grupalmente.",
+      "text2": "Appicar me solucionó todo, ayer tuve un día de locos y no tenía tiempo para nada, en solo unos minutos esta app me facilitó encontrar estacionamiento, reservar un buen restaurante y hasta pude ver la carta (con imagenes de cada plato) y los precios. Todo rápido, de manera simple y en una sola aplicación. Es muy completa, ¡totalmente recomendada!",
+      "text3": "Soy propietario de un restaurante y gracias a Appicar hemos agilizado nuestro modo de trabajo sumandonos también a la ola tecnologica y aprovechando al máximo las prestaciones que brinda esta app. También notamos que la gente se siente muy cómoda ya hacen todo desde la comodidad de su celular. Cabe destacar que también ampliamos nuestra clientela ya que llegamos a mucha más personas incluso mostrando apetitosas imagenes de nuestros platos."
     },
     "services": {
       "title": "Nuestros Servicios",
-      "description": "Ofrecemos una gama de servicios increíbles que revolucionarán su experiencia como cliente:"
+      "description": "Ofrecemos una gama de servicios increíbles que revolucionarán su experiencia como cliente:",
+      "more": "¡Cuéntame más!",
+      "groupReservations1": "Reservas grupales",
+      "groupReservations2": "para que pueda disfrutar de sus salidas con su familia o amigos. La cuenta se puede dividir individualmente entre los comensales o puede pagar por todos o algunos de ellos. ¡Ud. elige!",
+      "menu": "Consulte el menú",
+      "and": "y",
+      "order": "ordene",
+      "whatUWant": "lo que quiera. ¡No tendrá que esperar más a que el mesero se acerque a su mesa y tome su pedido!",
+      "pay": "Pague la cuenta",
+      "cellphone": "from your cellphone and you won't have to ask for the bill and wait no longer for the waiter to come and charge you. Available payment methods are:",
+      "cash": "efectivo",
+      "credit": "tarjetas de crédito",
+      "bank": "transferencias bancarias",
+      "networks": "redes de pago",
+      "online": "sistemas de pago online",
+      "search": "Búsqueda inteligente",
+      "find": "Puede encontrar su destino por",
+      "proximity": "proximidad",
+      "gps": "usando el GPS de su teléfono celular o puede filtrar los locales por",
+      "food": "comida",
+      "or": "o",
+      "drink": "bebida",
+      "offered": "ofrecida"
     },
     "stores": {
       "title": "Locales Adheridos",
