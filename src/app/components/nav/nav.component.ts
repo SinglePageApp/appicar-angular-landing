@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -7,24 +6,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./nav.component.css']
 })
 
-export class NavComponent implements OnInit {
-
-  private fragment: string;
-
-  constructor(private route: ActivatedRoute) { }
-
-  ngOnInit() {
-    this.route.fragment.subscribe(fragment => {
-      this.fragment = fragment;
-    });
-  }
-
-  onNavLinkClick(event: Event) {
-    event.preventDefault();
-    try {
-      document.querySelector('#' + this.fragment).scrollIntoView();
-    } catch (e) {
-      console.log('Error scrolling to #' + this.fragment);
-    }
-  }
-}
+/**
+ * class :: NavComponent
+ *
+ * Represents the landing page's navigation bar.
+ */
+export class NavComponent {}

@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-copyright',
   templateUrl: './copyright.component.html',
   styleUrls: ['./copyright.component.css']
 })
-export class CopyrightComponent implements OnInit {
 
-  constructor() { }
+export class CopyrightComponent {
 
-  ngOnInit() {
+  year: number;
+
+  constructor() {
+    this.year = (new Date()).getFullYear();
   }
 
 }

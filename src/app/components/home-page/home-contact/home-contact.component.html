@@ -1,15 +1,64 @@
 <div id="contact" class="contact">
   <div class="container">
     <div class="contact-heading">
-      <h2>Contact</h2>
+      <h2 id="home-contact-contact" translate>home-page.contact.contact</h2>
     </div>
     <div class="contact-form">
-      <form action="#" method="post">
-        <input type="text" name="Name" placeholder="Name" required="">
-        <input type="text" name="Email" placeholder="Email" required="">
-        <input type="text" name="Subject" placeholder="Subject" required="">
-        <textarea name="Message" placeholder="Message" required=""></textarea>
-        <input type="submit" value="SEND">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <!-- Input Fields -->
+        <fieldset id="home-contact-fieldset-{{ input }}" *ngFor="let input of inputControls">
+          <div *ngIf="form.controls[input].errors && (form.controls[input].dirty || form.controls[input].touched)"
+               class="alert alert-floating"
+          >
+            <div class="contact-required" [hidden]="!form.controls[input].errors.required">
+              {{ 'home-page.contact.required.' + input | translate }}
+            </div>
+          </div>
+          <input class="contact-input required" type="text" [name]="input" [formControlName]="input"
+                 placeholder="{{'home-page.contact.' + input | translate}}"
+          />
+        </fieldset>
+        <!-- //Input Fields -->
+
+        <!-- Message Field -->
+        <div id="home-contact-fieldset-message">
+          <textarea class="contact-input required" name="Message" placeholder="{{'home-page.contact.message' | translate}}"
+                    formControlName="message">
+          </textarea>
+          <div class="alert alert-floating-message"
+               *ngIf="form.controls['message'].errors && (form.controls['message'].dirty || form.controls['message'].touched)"
+          >
+            <div class="contact-required" [hidden]="!form.controls['message'].errors.required" translate>
+              home-page.contact.required.message
+            </div>
+          </div>
+        </div>
+        <!-- //Message Field -->
+
+        <!-- ReCAPTCHA Field -->
+        <re-captcha id="home-contact-captcha" formControlName="captcha" name="captcha" class="captcha" required></re-captcha>
+        <!-- //ReCAPTCHA Field -->
+
+        <!-- Alert Message -->
+        <div id="home-contact-alert-container" class="alert-container" *ngIf="wasSent()">
+          <div role="alert" [ngClass]="{ 'alert alert-success': true, 'fadeout': isHidden() }" *ngIf="wasSuccessful(); else failed">
+            <strong id="home-contact-success-title" translate>home-page.contact.success.title</strong>
+            <span id="home-contact-success-description" translate>home-page.contact.success.description</span>
+          </div>
+          <ng-template #failed>
+            <div class="alert alert-danger" role="alert">
+              <strong id="home-contact-error-title" translate>home-page.contact.error.title</strong>
+              <span id="home-contact-error-description" translate>home-page.contact.error.description</span>:
+              <a id="home-contact-mailto-link"
+                 href="mailto:support@appicar.com?subject={{ 'home-page.contact.error.subject' | translate }}&body={{ 'home-page.contact.error.body' | translate }}"
+              >
+                support@appicar.com
+              </a>!
+            </div>
+          </ng-template>
+        </div>
+        <!-- //Alert Message -->
+        <input id="home-contact-submit" type="submit" value="{{'home-page.contact.send' | translate}}" [disabled]="form.invalid" />
       </form>
     </div>
   </div>

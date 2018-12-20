@@ -1,0 +1,39 @@
+<!-- Odd list (3 elements) -->
+<div *ngIf="rowOdd; else even_row">
+  <div class="col-md-6 w3ls-special-img">
+    <div class="w3ls-special-text effect-1">
+      <a class="store-link store-uri" routerLink="/store/{{ store.URI }}">
+        <img class="store-image" src="{{ store.image }}" alt="{{ store.name }}" />
+      </a>
+    </div>
+  </div>
+  <div class="col-md-6 agileits-special-info">
+    <h4 class="store-name">{{ store.name }}</h4>
+    <p>
+      <b class="store-category" translate>{{ store.category }}</b><br />
+      <span class="store-address">{{ store.address }}, {{ store.city }}</span>
+    </p>
+  </div>
+  <div class="clearfix"> </div>
+</div>
+<!-- // Odd list (3 elements) -->
+
+<!-- Even list (3 elements) -->
+<ng-template #even_row>
+  <div class="col-md-6 agileits-special-info">
+    <h4 class="store-name">{{ store.name }}</h4>
+    <p>
+      <b class="store-category" translate>{{ store.category }}</b><br />
+      <span class="store-address">{{ store.address }}, {{ store.city }}</span>
+    </p>
+  </div>
+  <div class="col-md-6 w3ls-special-img">
+    <div class="w3ls-special-text effect-1">
+      <a class="store-link store-uri" routerLink="/store/{{ store.URI }}">
+        <img class="store-image" src="{{ store.image }}" alt="{{ store.name }}" />
+      </a>
+    </div>
+  </div>
+  <div class="clearfix"> </div>
+</ng-template>
+<!-- // Even list (3 elements) -->

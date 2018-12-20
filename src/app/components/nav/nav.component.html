@@ -1,43 +1,12 @@
 <div class="top-nav">
   <nav class="navbar navbar-default">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Menu
+    <button id="nav-btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#nav-collapse"
+    >
+      Menu
     </button>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li>
-          <a routerLink="/" routerLinkActive="active">Home</a>
-        </li>
-        <li>
-          <a routerLink="/about" routerLinkActive="active">About</a>
-        </li>
-        <li>
-          <a routerLink="/" fragment="stores" (click)="onNavLinkClick()">Stores</a>
-        </li>
-        <li>
-          <a class="nav-my-account" href="#" (click)="onNavLinkClick()">My Account</a>
-        </li>
-        <li>
-          <a routerLink="/" fragment="services" (click)="onNavLinkClick()">Services</a>
-        </li>
-        <li>
-          <a routerLink="/" fragment="reviews" (click)="onNavLinkClick()">Reviews</a>
-        </li>
-        <li>
-          <a routerLink="/" fragment="contact" (click)="onNavLinkClick()">Contact</a>
-        </li>
-        <li class="flags">
-          <a href="#">
-            <span class="flag-icon flag-icon-us"></span>
-          </a>
-          <a href="#">
-            <span class="flag-icon flag-icon-es"></span>
-          </a>
-          <a href="#">
-            <span class="flag-icon flag-icon-it"></span>
-          </a>
-        </li>
-        <div class="clearfix"> </div>
-      </ul>
+    <div id="nav-collapse" class="collapse navbar-collapse id-nav-collapse">
+      <app-nav-links id="nav-links" [isHeader]="true"></app-nav-links>
     </div>
   </nav>
 </div>
